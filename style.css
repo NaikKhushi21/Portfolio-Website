@@ -517,8 +517,8 @@ nav {
 
 .section__pic-container img {
     width: 250px;
-    height: 250px;
-    border-radius: 50%;
+    height: 350px;
+    border-radius: 5%;
     margin-bottom: 1rem;
     border: 4px solid #555;
 }
@@ -579,21 +579,31 @@ nav {
 .btn-color-1 {
     background-color: black;
     color: white;
+    border: 1px solid black;
+
 }
 
 .btn-color-1:hover {
-    transform: scale(1.08);
-    background-color: black;
+    /* transform: scale(1.08); */
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    /* box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); */
 }
 
 .btn-color-2 {
     background-color: black;
     color: white;
+    border: 1px solid black;
+
 }
 
 .btn-color-2:hover {
-    transform: scale(1.08);
-    background-color: black;
+    /* transform: scale(1.08); */
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    /* box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); */
 }
 
 /* ABOUT SECTION */
@@ -604,17 +614,18 @@ nav {
 
 .text-container-1 {
     text-align: left;
-    background: linear-gradient(90deg, #ffffff83, #d5d5d580);
+    /* background: linear-gradient(90deg, #ffffff83, #d5d5d580); */
+    background: white;
     padding: 2rem;
     border-radius: 10px;
     margin-bottom: 1.5rem;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+    transition: transform 0.6s cubic-bezier(0.1, 0.1, 0.1, 1), 
                 box-shadow 0.01s ease-in-out; /* Smooth hover effect */
 }
 
 .text-container-1:hover {
-    transform: scale(1.08); /* Slightly enlarge the container */
+    /* transform: scale(1.08); Slightly enlarge the container */
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
 }
 
@@ -624,21 +635,25 @@ nav {
     border-radius: 10px;
     margin-bottom: 1.5rem;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+    /* transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+                box-shadow 0.01s ease-in-out; Smooth hover effect */
+    transition: transform 0.6s cubic-bezier(0.1, 0.1, 0.1, 1), 
                 box-shadow 0.01s ease-in-out; /* Smooth hover effect */
 }
 
 .text-container-2:hover {
-    transform: scale(1.08); /* Slightly enlarge the container */
+    /* transform: scale(1.08); Slightly enlarge the container */
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
 }
 
 .text-container-2:nth-child(1) {
-    background: linear-gradient(90deg, #ffffff83, #d5d5d580);
+    /* background: linear-gradient(90deg, #ffffff83, #d5d5d580); */
+    background: white;
 }
 
 .text-container-2:nth-child(2) {
-    background: linear-gradient(90deg, #ffffff83, #d5d5d580);
+    /* background: linear-gradient(90deg, #ffffff83, #d5d5d580); */
+    background: white;
 }
 /* EXPERIENCE SECTION */
 
@@ -650,11 +665,14 @@ nav {
 .details-container-1 {
     padding: 1.5rem;
     flex: 1;
-    background: linear-gradient(90deg, #ffffff83, #d5d5d580);
+    /* background: linear-gradient(90deg, #ffffff83, #d5d5d580); */
+    background: white;
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+    /* transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+                box-shadow 0.01s ease-in-out; Smooth hover effect */
+    transition: transform 0.6s cubic-bezier(0.1, 0.1, 0.1, 1), 
                 box-shadow 0.01s ease-in-out; /* Smooth hover effect */
     font-weight: bolder;
   }
@@ -673,7 +691,7 @@ a:visited {
 }
 
 .details-container-1:hover {
-    transform: scale(1.08); /* Slightly enlarge the container */
+    /* transform: scale(1.08); Slightly enlarge the container */
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
 }
 
@@ -690,31 +708,37 @@ a:visited {
     animation: gradientMove 6s infinite linear;
     color: black; /* Make text visible */
     width: 650px;
-    transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+    /* transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1), 
+                box-shadow 0.01s ease-in-out; Smooth hover effect */
+    transition: transform 0.6s cubic-bezier(0.1, 0.1, 0.1, 1), 
                 box-shadow 0.01s ease-in-out; /* Smooth hover effect */
     flex: 1 1 400px;
 }
 
 .details-container:hover {
-    transform: scale(1.08); /* Slightly enlarge the container */
+    /* transform: scale(1.08); Slightly enlarge the container */
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* Add a soft shadow */
 }
 
 /* Different gradient colors for each container */
 .details-container:nth-child(1) {
-    background: linear-gradient(90deg, #ffffff83, #d5d5d580);
+    /* background: linear-gradient(90deg, #ffffff83, #d5d5d580); */
+    background: white;
 }
 
 .details-container:nth-child(2) {
-    background: linear-gradient(90deg, #ffffff83, #d5d5d580);
+    /* background: linear-gradient(90deg, #ffffff83, #d5d5d580); */
+    background: white;
 }
 
 .details-container:nth-child(3) {
-    background: linear-gradient(90deg, #ffffff83, #d5d5d580);
+    /* background: linear-gradient(90deg, #ffffff83, #d5d5d580); */
+    background: white;
 }
 
 .details-container:nth-child(4) {
-    background: linear-gradient(90deg, #ffffff83, #d5d5d580);
+    /* background: linear-gradient(90deg, #ffffff83, #d5d5d580); */
+    background: white;
 }
 
 .details-container ul {
@@ -926,6 +950,34 @@ a:visited {
     background-color: #0056b3;
 } */
 
+/* Skills Section (Grid Layout) */
+.skills-grid {
+    padding: 2rem 10%;
+    justify-content: center;
+    overflow-x: auto;
+    display: grid;
+    white-space: wrap;
+    gap: 2rem;
+    scrollbar-width: auto; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* gap: 1.5rem; */
+  }
+  .skill-card {
+    /* background: var(--container-bg); */
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    /* transition: transform 0.4s ease; */
+    transition: transform 0.6s cubic-bezier(0.1, 0.1, 0.1, 1), 
+                box-shadow 0.01s ease-in-out; /* Smooth hover effect */
+  }
+  .skill-card:hover {
+    /* transform: translateY(-5px); */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
 #projects, #publications {
     padding: 3rem 10%;
     
@@ -991,7 +1043,8 @@ a:visited {
 }
 
 .project-card-front {
-    background: linear-gradient(90deg, #ffffff83, #d5d5d580);
+    /* background: linear-gradient(90deg, #ffffff83, #d5d5d580); */
+    background: white;
     color: white;
     font-weight: bolder;
 }
@@ -1009,22 +1062,45 @@ a:visited {
     margin: 0.5rem 0;
 }
 
-.project-btn {
+/* .project-btn {
     margin-top: 1rem;
     display: inline-block;
     padding: 0.7rem 1.5rem;
-    border: none;
+    border: black;
     border-radius: 10px;
     background-color: black;
     color: white;
     cursor: pointer;
     /* transition: background 0.3s, transform 0.2s; */
+
+/* }
+
+.project-btn:hover {
+    /* background-color: rgb(50, 50, 50); */
+    /* background-color: black; 
+} */
+
+.project-btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.7rem 1.5rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    /* transition: background 0.3s, transform 0.2s, box-shadow 0.3s; */
+    border: 1px solid black;
+
 }
 
 .project-btn:hover {
-    background-color: black;
-    transform: scale(1.08);
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    /* box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.8); */
 }
+
 
 
 /* CONTACT SECTION */
