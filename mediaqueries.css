@@ -1,4 +1,4 @@
-/* @media screen and (max-width: 1400px) {
+@media screen and (max-width: 1400px) {
     #profile {
       height: 83vh;
       margin-bottom: 6rem;
@@ -16,9 +16,9 @@
     #desktop-nav {
       display: none;
     }
-    #hamburger-nav {
+    /* #hamburger-nav {
       display: flex;
-    }
+    } */
     #experience,
     .experience-details-container {
       margin-top: 2rem;
@@ -100,7 +100,54 @@
     .text-container {
       text-align: justify;
     }
-  } */
+  }
+
+/* Large Screens (1400px and up) */
+@media screen and (max-width: 1400px) {
+  .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Adjust column width */
+  }
+}
+
+/* Medium Screens (1200px and up) */
+@media screen and (max-width: 1200px) {
+  .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Adjust for tablets */
+  }
+  .skill-card {
+      padding: 1.8rem;
+  }
+}
+
+/* Small Screens (600px and below) */
+@media screen and (max-width: 600px) {
+  .skills-grid {
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Stack in single or two columns */
+      gap: 1.5rem;
+  }
+  .skill-card {
+      padding: 1.5rem;
+      font-size: 0.9rem;
+  }
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1200px) {
+  #desktop-nav {
+      display: none; /* Hide desktop nav */
+  }
+  #hamburger-nav {
+      display: flex; /* Show hamburger menu */
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background-color: white;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+  }
+}
 
 /* 
   @media screen and (max-width: 1400px) {
@@ -205,8 +252,8 @@
     .text-container {
       text-align: justify;
     }
-} */
-
+}
+ */
 /* MEDIA QUERIES */
 /* 
 @media screen and (max-width: 1400px) {
@@ -266,7 +313,7 @@
 } */
 
 /* MEDIA QUERIES */
-
+/* 
 @media screen and (max-width: 1400px) {
   #profile {
       margin-bottom: 6rem;
@@ -322,4 +369,4 @@
       text-align: justify;
   }
 }
-
+ */
