@@ -1,0 +1,104 @@
+/* Reset and base styles for Portfolio React App */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+:root {
+  --primary: #0077b6;
+  --primary-light: #48cae4;
+  --background: #f8fafd;
+  --card-bg: #fff;
+  --text: #222;
+  --text-light: #555;
+  --shadow: 0 4px 24px rgba(0,0,0,0.07);
+  --transition: 0.3s cubic-bezier(.4,0,.2,1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  overflow-x: hidden;
+  color: var(--text);
+  font-family: 'Poppins', Arial, sans-serif;
+  scroll-behavior: smooth;
+  /* Performance optimizations */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Optimize animations and transitions */
+* {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Optimize for reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover {
+  color: var(--primary-light);
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+.section-animate {
+  opacity: 0;
+  transition: opacity 0.7s var(--transition);
+}
+.section-animate.visible {
+  opacity: 1;
+}
+
+/* Performance optimizations for images */
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Optimize scroll performance */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+/* Reduce layout shifts */
+body {
+  overflow-anchor: none;
+}
+
+/* Optimize for mobile performance */
+@media (max-width: 768px) {
+  html {
+    scroll-behavior: auto;
+  }
+}
