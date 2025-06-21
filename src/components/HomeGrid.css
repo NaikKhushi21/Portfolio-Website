@@ -184,9 +184,9 @@ svg {
 .nav-text {
   font-family: 'Dancing Script', cursive;
   font-size: 65px;
-  fill: #D83F87;
-  text-transform: capitalize;
   font-weight: 500;
+  fill: #D83F87;
+  text-transform: none;
   transition: fill 0.3s ease;
 }
 
@@ -208,5 +208,81 @@ svg {
   font-family: 'Dancing Script', cursive;
   text-transform: lowercase;
   font-size: 85px;
-} 
+}
+
+.center-name {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  font-weight: 700;
+  fill: #D83F87;
+  text-anchor: middle;
+}
+
+.desktop-homegrid { display: block; }
+.mobile-homegrid { display: none; }
+
+@media (max-width: 700px) {
+  .desktop-homegrid { display: none; }
+  .mobile-homegrid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    min-height: 100vh;
+  }
+  
+  .mobile-image-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+    background: #F8C8DC;
+    border: 2px solid #D83F87;
+    border-radius: 0;
+    margin-bottom: 1rem;
+    gap: 1rem;
+  }
+  
+  .mobile-profile-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #D83F87;
+    box-shadow: 0 4px 16px rgba(216, 63, 135, 0.2);
+  }
+  
+  .mobile-grid-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .mobile-homegrid-item {
+    background: #fff;
+    border: 2px solid #D83F87;
+    border-radius: 0;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #D83F87;
+    padding: 2rem 0;
+    font-family: 'Dancing Script', cursive;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(216, 63, 135, 0.08);
+    transition: background 0.2s, color 0.2s;
+  }
+  .mobile-homegrid-item:active {
+    background: #F8C8DC;
+    color: #fff;
+  }
+  
+  .mobile-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #D83F87;
+    margin: 0;
+    text-align: center;
+  }
 } 

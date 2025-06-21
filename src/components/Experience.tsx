@@ -21,6 +21,14 @@ const experiences = [
     icon: 'devicon-react-original colored', // Placeholder
   },
   {
+    company: 'University of Southern California',
+    location: 'Los Angeles, California',
+    title: 'Course Grader (CSCI 526 Advanced Mobile devices and Game Console)',
+    dates: 'Jan 2024 – Present',
+    summary: `Collaborated with the professor to manage coursework, track team project progress, and ensure adherence to industry standards. Provided in-depth feedback on game mechanics, UI/UX design, and software architecture using Unity and C#. Assessed and graded technical game design documents and presentations, ensuring compliance with best coding practices.`,
+    icon: '', // No icon
+  },
+  {
     company: 'Avalon Aerospace',
     location: 'Compton, CA',
     title: 'Machine Learning Engineer',
