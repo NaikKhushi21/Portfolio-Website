@@ -1,23 +1,23 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, easeOut } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const headline = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: easeOut } },
 };
 const subheadline = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.8, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.8, ease: easeOut } },
 };
 const intro = {
   hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.7, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { delay: 0.6, duration: 0.7, ease: easeOut } },
 };
 const button = {
   hidden: { opacity: 0, scale: 0.8 },
-  visible: { opacity: 1, scale: 1, transition: { delay: 1, duration: 0.5, ease: 'easeOut' } },
+  visible: { opacity: 1, scale: 1, transition: { delay: 1, duration: 0.5, ease: easeOut } },
 };
 
 const Hero: React.FC = () => {
