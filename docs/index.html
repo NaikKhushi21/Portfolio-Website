@@ -5,9 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Khushi Naik Portfolio - Machine Learning Engineer & Software Developer" />
     <title>Khushi Naik Portfolio</title>
+    <script type="text/javascript">
+      // Part 2 of the SPA redirect script.
+      // This part reads the path from the query string and rewrites the URL
+      // so the React Router can understand it.
+      (function(l) {
+        if (l.search) {
+          var q = {};
+          l.search.slice(1).split('&').forEach(function(v) {
+            var a = v.split('=');
+            q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
+          });
+          if (q.p !== undefined) {
+            window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + (q.p || '') +
+              (q.q ? ('?' + q.q) : '') +
+              l.hash
+            );
+          }
+        }
+      }(window.location))
+    </script>
     <link rel="icon" type="image/svg+xml" href="/Portfolio-Website/vite.svg" />
-    <script type="module" crossorigin src="/Portfolio-Website/assets/index-DYGz0z8T.js"></script>
-    <link rel="stylesheet" crossorigin href="/Portfolio-Website/assets/index-ButN4NSa.css">
+    <script type="module" crossorigin src="/Portfolio-Website/assets/index-6Hn6_CZ3.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio-Website/assets/index-CH24BRge.css">
   </head>
   <body>
     <div id="root"></div>
