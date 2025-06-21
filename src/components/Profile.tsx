@@ -4,7 +4,7 @@ const Profile: React.FC = () => {
   return (
     <section id="profile">
       <div className="section__pic-container">
-        <img src="/profile.jpg" alt="Khushi Naik profile" />
+        <img src="profile.jpg" alt="Khushi Naik profile" />
       </div>
       <div className="section__text">
         <h2>Khushi Naik</h2>
@@ -15,13 +15,13 @@ const Profile: React.FC = () => {
         </div>
         <div id="socials-container">
           <a href="https://www.linkedin.com/in/khushinaik/" target="_blank" rel="noopener noreferrer">
-            <img src="/linkedin.png" alt="LinkedIn" className="icon" />
+            <img src="linkedin.png" alt="LinkedIn" className="icon" />
           </a>
           <a href="https://github.com/NaikKhushi21" target="_blank" rel="noopener noreferrer">
-            <img src="/github.png" alt="GitHub" className="icon" />
+            <img src="github.png" alt="GitHub" className="icon" />
           </a>
           <a href="https://scholar.google.com/citations?user=KhushiNaik" target="_blank" rel="noopener noreferrer">
-            <img src="/scholar.png" alt="Google Scholar" className="icon" />
+            <img src="scholar.png" alt="Google Scholar" className="icon" />
           </a>
         </div>
       </div>

@@ -63,7 +63,7 @@ const HomeGrid: React.FC = () => {
         {/* Center Box */}
         <g>
           <rect x="500" y="300" width="600" height="300" fill="#F8C8DC"/>
-          <image href="/me (2).png" x="500" y="300" width="600" height="300" preserveAspectRatio="xMidYMid slice" />
+          <image href="me (2).png" x="500" y="300" width="600" height="300" preserveAspectRatio="xMidYMid slice" />
           <rect x="500" y="300" width="600" height="300" fill="none" stroke="#D83F87" strokeWidth="2"/>
         </g>
 
