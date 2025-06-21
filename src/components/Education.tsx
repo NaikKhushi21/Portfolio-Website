@@ -6,7 +6,6 @@ import awsLogo from '../assets/aws.svg';
 import jaxLogo from '../assets/jax.png';
 import openaiLogo from '../assets/OpenAI-black-monoblossom.svg';
 import langchainLogo from '../assets/langchain.png';
-import pysparkLogo from '../assets/pyspark.svg';
 
 const educationData = [
   {
