@@ -1,7 +1,7 @@
 .about-section {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding: 3rem 0 2rem 0;
 }
 
