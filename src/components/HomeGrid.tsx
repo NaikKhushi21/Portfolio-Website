@@ -71,7 +71,7 @@ const HomeGrid: React.FC = () => {
           <g>
             <circle cx="800" cy="420" r="120" fill="#F8C8DC" stroke="#D83F87" strokeWidth="3"/>
             <image 
-              href="me (2).png" 
+              href={`${import.meta.env.BASE_URL}me (2).png`} 
               x="680" 
               y="300" 
               width="240" 
@@ -110,7 +110,7 @@ const HomeGrid: React.FC = () => {
       </div>
       <div className="mobile-homegrid">
         <div className="mobile-image-container">
-          <img src="me (2).png" alt="Khushi Naik" className="mobile-profile-image" />
+          <img src={`${import.meta.env.BASE_URL}me (2).png`} alt="Khushi Naik" className="mobile-profile-image" />
           <h2 className="mobile-name">Khushi Naik</h2>
         </div>
         <div className="mobile-grid-items">

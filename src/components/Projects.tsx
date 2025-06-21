@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './Projects.css';
 import PageLayout, { cardVariants } from './PageLayout';
+import langchainLogo from '../assets/langchain.png';
 
 const logoMap: Record<string, string> = {
   'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
@@ -21,7 +22,7 @@ const logoMap: Record<string, string> = {
   'C#': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
   'GitHub': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
   'DOTS': '',
-  'LangChain': '',
+  'LangChain': langchainLogo,
   'ChromaDB': '',
   'BeautifulSoup': '',
   'GCN': '',

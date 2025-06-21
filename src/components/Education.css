@@ -191,4 +191,13 @@
   .skills-grid-container {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.skill-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  display: inline-block;
 } 
