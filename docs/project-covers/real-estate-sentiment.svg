@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Real Estate Market Sentiment Analysis cover">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <rect x="120" y="120" width="960" height="435" rx="22" fill="#111827" stroke="#334155" stroke-width="3"/>
+  <g transform="translate(180 190)">
+    <rect x="0" y="0" width="410" height="300" rx="14" fill="#0b1220"/>
+    <path d="M34 254H372" stroke="#475569" stroke-width="3"/>
+    <path d="M34 28V254" stroke="#475569" stroke-width="3"/>
+    <rect x="64" y="202" width="54" height="52" rx="8" fill="#ef4444"/>
+    <rect x="136" y="172" width="54" height="82" rx="8" fill="#f97316"/>
+    <rect x="208" y="150" width="54" height="104" rx="8" fill="#f59e0b"/>
+    <rect x="280" y="112" width="54" height="142" rx="8" fill="#22c55e"/>
+  </g>
+  <g transform="translate(640 190)">
+    <rect x="0" y="0" width="380" height="300" rx="14" fill="#0b1220"/>
+    <path d="M40 224C90 170 138 232 192 182C238 140 294 192 340 126" fill="none" stroke="#60a5fa" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="192" cy="182" r="9" fill="#60a5fa"/>
+    <rect x="40" y="34" width="140" height="36" rx="18" fill="#334155"/>
+    <text x="62" y="58" font-family="Manrope, sans-serif" font-size="18" fill="#f1f5f9">VADER Score</text>
+    <rect x="40" y="92" width="102" height="30" rx="15" fill="#22c55e"/>
+    <text x="66" y="112" font-family="Manrope, sans-serif" font-size="16" fill="#052e16">+0.72</text>
+  </g>
+  <text x="120" y="86" font-family="Manrope, sans-serif" font-size="52" font-weight="700" fill="#f1f5f9">Real Estate Market Sentiment Analysis</text>
+</svg>

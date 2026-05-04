@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="AI Book Recommendation System cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#1e293b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <rect x="150" y="120" width="340" height="430" rx="16" fill="#f8fafc"/>
+  <rect x="178" y="156" width="285" height="14" rx="7" fill="#94a3b8"/>
+  <rect x="178" y="196" width="250" height="12" rx="6" fill="#cbd5e1"/>
+  <rect x="178" y="230" width="270" height="12" rx="6" fill="#cbd5e1"/>
+  <rect x="178" y="264" width="235" height="12" rx="6" fill="#cbd5e1"/>
+  <rect x="178" y="298" width="255" height="12" rx="6" fill="#cbd5e1"/>
+  <g transform="translate(560 160)">
+    <rect x="0" y="0" width="500" height="330" rx="18" fill="#111827" stroke="#334155" stroke-width="3"/>
+    <text x="26" y="54" font-family="Manrope, sans-serif" font-size="28" font-weight="700" fill="#f8fafc">Recommendation Engine</text>
+    <circle cx="84" cy="145" r="12" fill="#60a5fa"/>
+    <circle cx="218" cy="112" r="12" fill="#34d399"/>
+    <circle cx="346" cy="160" r="12" fill="#f59e0b"/>
+    <circle cx="430" cy="240" r="12" fill="#f472b6"/>
+    <path d="M84 145L218 112L346 160L430 240" fill="none" stroke="#93c5fd" stroke-width="5" stroke-linecap="round"/>
+    <rect x="30" y="250" width="310" height="44" rx="10" fill="#1e293b"/>
+    <text x="48" y="279" font-family="Manrope, sans-serif" font-size="20" fill="#e2e8f0">Top picks: AI, Product, Design</text>
+  </g>
+  <text x="150" y="86" font-family="Manrope, sans-serif" font-size="52" font-weight="700" fill="#f1f5f9">AI Book Recommendation System</text>
+</svg>

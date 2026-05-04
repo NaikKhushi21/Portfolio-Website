@@ -1,0 +1,24 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI Lab Report Interpreter cover">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c2030"/>
+      <stop offset="100%" stop-color="#3f2f58"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0f4ff"/>
+      <stop offset="100%" stop-color="#d6e4ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg)"/>
+  <circle cx="1030" cy="120" r="150" fill="#7e56d833"/>
+  <rect x="120" y="110" width="960" height="500" rx="28" fill="#ffffff14" stroke="#ffffff2d"/>
+  <rect x="190" y="180" width="520" height="360" rx="18" fill="url(#panel)"/>
+  <rect x="230" y="230" width="360" height="18" rx="9" fill="#9db4f0"/>
+  <rect x="230" y="270" width="300" height="14" rx="7" fill="#b8caf9"/>
+  <rect x="230" y="304" width="240" height="14" rx="7" fill="#b8caf9"/>
+  <rect x="230" y="338" width="330" height="14" rx="7" fill="#b8caf9"/>
+  <rect x="760" y="200" width="250" height="130" rx="16" fill="#f5d7e6"/>
+  <rect x="760" y="360" width="250" height="160" rx="16" fill="#d8f0e6"/>
+  <path d="M810 300 L870 240 L930 290 L980 235" stroke="#6d4fd2" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <text x="190" y="665" fill="#f7efff" font-family="Manrope, sans-serif" font-size="44" font-weight="800">AI Lab Report Interpreter</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Data Visualization Dashboard cover">
+  <rect width="1200" height="675" fill="#0b1220"/>
+  <rect x="120" y="120" width="960" height="435" rx="22" fill="#f8fafc"/>
+  <rect x="120" y="120" width="960" height="68" rx="22" fill="#e2e8f0"/>
+  <circle cx="164" cy="154" r="10" fill="#f87171"/>
+  <circle cx="194" cy="154" r="10" fill="#fbbf24"/>
+  <circle cx="224" cy="154" r="10" fill="#34d399"/>
+  <rect x="170" y="220" width="290" height="290" rx="14" fill="#dbeafe"/>
+  <rect x="490" y="220" width="240" height="138" rx="14" fill="#dcfce7"/>
+  <rect x="490" y="372" width="240" height="138" rx="14" fill="#fee2e2"/>
+  <rect x="760" y="220" width="270" height="290" rx="14" fill="#e0e7ff"/>
+  <path d="M190 456L242 404L286 428L338 360L392 340L438 298" fill="none" stroke="#2563eb" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="338" cy="360" r="8" fill="#2563eb"/>
+  <rect x="520" y="260" width="180" height="12" rx="6" fill="#86efac"/>
+  <rect x="520" y="288" width="144" height="12" rx="6" fill="#4ade80"/>
+  <rect x="520" y="416" width="182" height="12" rx="6" fill="#fca5a5"/>
+  <rect x="520" y="444" width="132" height="12" rx="6" fill="#f87171"/>
+  <path d="M798 460h206M798 420h206M798 380h206M798 340h206" stroke="#94a3b8" stroke-width="3"/>
+  <text x="120" y="86" font-family="Manrope, sans-serif" font-size="52" font-weight="700" fill="#f1f5f9">Data Visualization Dashboard</text>
+</svg>
