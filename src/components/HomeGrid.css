@@ -1,292 +1,141 @@
-/* HomeGrid.css */
-.home-layout-container {
+.home-shell {
+  width: min(1320px, 96vw);
+  margin: 0 auto;
+  padding: 1.2rem 0 4rem;
+  display: grid;
+  gap: 1.2rem;
+}
+
+.home-hero-block {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  min-height: 82vh;
   overflow: hidden;
-  background: #fff;
-  border: 1px solid #000;
-  box-sizing: border-box;
 }
 
-.layout-item {
-  position: absolute;
-  text-decoration: none;
-  color: #000;
-  transition: color 0.3s ease;
-  padding: 0;
-  margin: 0;
-}
-
-.layout-item h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin: 0;
-}
-
-/* Positioning based on the new screenshot */
-.item-work { top: 20%; left: 15%; font-size: clamp(3rem, 8vw, 5rem); }
-.item-skills { top: 20%; right: 15%; font-size: clamp(3rem, 8vw, 5rem); }
-.item-about { bottom: 20%; left: 10%; font-size: clamp(3rem, 8vw, 5rem); }
-.item-mid-group {
-  position: absolute;
-  bottom: 30%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 2rem;
-}
-.item-education h2, .item-publications h2 { font-size: clamp(2rem, 5vw, 3rem); }
-.item-connect { bottom: 15%; right: 15%; font-size: clamp(3rem, 8vw, 5rem); }
-
-.layout-item.active, .layout-item:hover {
-  color: #f3ca20;
-}
-
-/* Ticker and Logo Bars */
-.ticker-wrap {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  transform: translateY(-50%);
-  z-index: 1;
-  height: auto;
-}
-
-.ticker {
-  display: flex;
-  align-items: center;
-  animation: ticker-left 40s linear infinite;
-  white-space: nowrap;
-}
-
-.ticker__item {
-  display: inline-block;
-  padding: 0 1rem;
-  font-size: clamp(1rem, 2.5vw, 1.2rem);
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.logo-bars {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(150px, 15vw, 200px);
-  height: 30px;
+.hero-main {
+  position: relative;
   z-index: 2;
 }
 
-.logo-bars::before,
-.logo-bars::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 10px;
-  background-color: #f3ca20;
-  border: 1px solid #000;
-}
-
-.logo-bars::before { top: 0; }
-.logo-bars::after { bottom: 0; }
-
-@keyframes ticker-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-.logo-box {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.logo-box::before,
-.logo-box::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 12px; /* Thickness of the yellow bars */
-  background-color: #f3ca20;
-  border: 1px solid #000;
-}
-
-.logo-box::before {
-  top: 0;
-}
-.logo-box::after {
-  bottom: 0;
-}
-
-.logo-box span {
-  font-size: clamp(3rem, 10vw, 5rem);
-}
-
-/* Ticker Styles */
-@keyframes ticker-left {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
-}
-
-@keyframes ticker-right {
-  0% { transform: translateX(-100%); }
-  100% { transform: translateX(0); }
-}
-
-.ticker-wrap--right {
-  bottom: 0;
-  border-bottom: none;
-  border-top: 2px solid #000;
-}
-
-.ticker-wrap--left .ticker {
-  animation-name: ticker-left;
-}
-
-.ticker-wrap--right .ticker {
-  animation-name: ticker-right;
-}
-
-.ticker__item {
-  display: inline-block;
-  padding: 0 2rem;
-  font-size: clamp(1rem, 4vw, 1.5rem);
-  color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
+.hero-kicker {
+  font-size: 0.86rem;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
-}
-
-.svg-container {
-  width: 100vw;
-  height: 100vh;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-svg {
-  width: 100%;
-  height: 100%;
-}
-
-.nav-text {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 65px;
-  font-weight: 400;
-  fill: #D83F87;
-  text-transform: uppercase;
-  transition: fill 0.3s ease;
-  letter-spacing: -0.02em;
-}
-
-.nav-polygon {
-  fill: transparent;
-  transition: fill 0.3s ease;
-}
-
-.nav-group {
-  cursor: pointer;
-}
-
-.nav-group:hover .nav-polygon,
-.nav-polygon.active {
-  fill: #F8C8DC;
-}
-
-.kn-text {
-  font-family: 'Dancing Script', cursive;
-  text-transform: lowercase;
-  font-size: 85px;
-}
-
-.center-name {
-  font-family: 'Dancing Script', cursive;
-  font-size: 32px;
+  letter-spacing: 0.12em;
+  color: #4b5563;
   font-weight: 700;
-  fill: #D83F87;
-  text-anchor: middle;
 }
 
-.desktop-homegrid { display: block; }
-.mobile-homegrid { display: none; }
+.hero-actions {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.64rem;
+}
 
-@media (max-width: 700px) {
-  .desktop-homegrid { display: none; }
-  .mobile-homegrid {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem;
-    min-height: 100vh;
+.hero-actions button {
+  border: 1px solid rgba(17, 24, 39, 0.28);
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.62rem 1rem;
+  font-weight: 700;
+  font-size: 0.86rem;
+  transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+}
+
+.hero-actions button:hover {
+  transform: translateY(-2px);
+  border-color: #2563eb;
+  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.22);
+}
+
+.hero-orb {
+  position: absolute;
+  right: -120px;
+  top: 5%;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #60a5fa, #2563eb);
+  opacity: 0.92;
+  z-index: 1;
+}
+
+.home-strip {
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.track span {
+  padding: 0.86rem 1rem;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.track span::after {
+  content: '•';
+  margin-left: 1rem;
+  color: #2563eb;
+}
+
+.home-link-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.home-link-grid button {
+  min-height: 150px;
+  border: 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  background: transparent;
+  text-align: left;
+  padding: 1.1rem;
+  font-size: clamp(1.7rem, 3vw, 2.9rem);
+  font-weight: 650;
+  letter-spacing: -0.03em;
+  transition: background var(--ease), padding-left var(--ease), color var(--ease);
+}
+
+.home-link-grid button:hover {
+  background: rgba(255, 255, 255, 0.56);
+  padding-left: 1.5rem;
+  color: #2563eb;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  
-  .mobile-image-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 0;
-    background: #F8C8DC;
-    border: 2px solid #D83F87;
-    border-radius: 0;
-    margin-bottom: 1rem;
-    gap: 1rem;
+
+  to {
+    transform: translateX(-50%);
   }
-  
-  .mobile-profile-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #D83F87;
-    box-shadow: 0 4px 16px rgba(216, 63, 135, 0.2);
+}
+
+@media (max-width: 980px) {
+  .home-link-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .mobile-grid-items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
+
+  .home-link-grid button {
+    border-right: 0;
+    min-height: 112px;
   }
-  
-  .mobile-homegrid-item {
-    background: #fff;
-    border: 2px solid #D83F87;
-    border-radius: 0;
-    text-align: center;
-    font-size: 1.5rem;
-    color: #D83F87;
-    padding: 2rem 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 400;
-    text-transform: uppercase;
-    cursor: pointer;
-    box-shadow: 0 2px 8px rgba(216, 63, 135, 0.08);
-    transition: background 0.2s, color 0.2s;
-    letter-spacing: -0.01em;
+
+  .hero-orb {
+    width: 220px;
+    height: 220px;
+    right: -80px;
   }
-  .mobile-homegrid-item:active {
-    background: #F8C8DC;
-    color: #fff;
-  }
-  
-  .mobile-name {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #D83F87;
-    margin: 0;
-    text-align: center;
-  }
-} 
+}

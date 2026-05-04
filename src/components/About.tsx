@@ -1,42 +1,119 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
-import PageLayout, { cardVariants } from './PageLayout';
+import PageLayout from './PageLayout';
+
+const creativeModes = {
+  aiSystems: {
+    label: 'AI Systems',
+    title: 'Applied AI System Building',
+    summary: 'I build practical AI workflows that combine model capability with production reliability.',
+    points: [
+      'Built RAG assistants, recommendation systems, and document-driven copilots.',
+      'Focused on grounded outputs, stable APIs, and clean frontend integration.',
+      'Prioritize measurable outcomes over demo-only behavior.'
+    ]
+  },
+  computerVision: {
+    label: 'Computer Vision',
+    title: 'Computer Vision for Real Workflows',
+    summary: 'I enjoy vision projects where model decisions directly affect user and business outcomes.',
+    points: [
+      'Worked on real-time detection, safety-focused vision, and model fine-tuning.',
+      'Optimize for latency and robustness so systems hold up outside ideal conditions.',
+      'Treat evaluation and error analysis as core product work.'
+    ]
+  },
+  productEngineering: {
+    label: 'Product Engineering',
+    title: 'End-to-End Product Execution',
+    summary: 'I like owning the full flow from backend logic to frontend usability and deployment readiness.',
+    points: [
+      'Build across React, FastAPI, data workflows, and integration layers.',
+      'Design for first-use clarity and long-term maintainability.',
+      'Best work happens where technical depth and product clarity meet.'
+    ]
+  },
+  hobby: {
+    label: 'Hobby',
+    title: 'Hobby and Personal Interests',
+    summary: 'Outside work, I spend time on creative hobbies that help me reset and think clearly.',
+    points: [
+      'Painting and sketching help me stay patient and detail-oriented.',
+      'Music helps me focus and maintain a steady creative rhythm.',
+      'These hobbies keep me balanced and bring fresh perspective to my work.'
+    ]
+  }
+} as const;
+
+type CreativeMode = keyof typeof creativeModes;
 
 const About: React.FC = () => {
+  const [activeMode, setActiveMode] = useState<CreativeMode>('aiSystems');
+  const mode = creativeModes[activeMode];
+
   return (
-    <PageLayout title="About Me" subtitle="Get to know">
+    <PageLayout
+      title="About Me"
+      subtitle="Short story, no fluff"
+      description="I’m an MSCS graduate from USC who builds AI, computer vision, and full-stack products with equal focus on technical quality and user experience."
+    >
       <section id="about" className="about-section">
-        <motion.div
+        <article
           className="about-card"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.1 }}
-          variants={cardVariants}
         >
-          <div className="about-card-content">
-            <div className="about-description">
-              <p>
-                I'm Khushi Naik, a recent MS CS graduate from USC who thrives on building thoughtful products at the edge of computer vision, machine learning, and clear user experience. I'm especially drawn to biotech and healthcare, where smart software can genuinely lighten someone's day. My goal is to keep learning the science behind these fields while sharpening my engineering craft so I can contribute to tools that help patients and clinicians work with more confidence and less friction.
-              </p>
-              <p>
-                When the laptop closes, my life shifts gears:
-              </p>
-              <ul>
-                <li>Dance fills my evenings with hip hop footwork and Bollywood choreography.</li>
-                <li>Painting lets me slow down, mix new colors, and watch a blank canvas turn into something expressive.</li>
-                <li>Adventure parks offer the thrill of a sudden drop, while long mountain hikes reset my perspective and spark fresh ideas.</li>
-                <li>I love sharing playlists, trying street food in new cities, and reading memoirs that show how people overcome challenges.</li>
-              </ul>
-              <p>
-                Curiosity guides everything I do, whether I'm debugging code, learning a new dance routine, or exploring a forest trail. I bring that same energy into every project and partnership, always aiming to create work that is useful, welcoming, and a little more human.
-              </p>
-            </div>
+          <div className="about-media">
+            <img src="me (2).png" alt="Khushi Naik" />
           </div>
-        </motion.div>
+          <div className="about-description">
+            <p>
+              I'm Khushi Naik, an MS Computer Science graduate from USC. I work at the intersection of computer vision,
+              machine learning, and full-stack product engineering, with strong focus on healthcare, education, and
+              high-impact user workflows.
+            </p>
+            <p>
+              I have built production-oriented systems across internships and projects, including AI learning tools,
+              RAG assistants, real-time vision pipelines, and full-stack apps. I enjoy owning the full path from
+              architecture and APIs to interface polish and usability.
+            </p>
+          </div>
+        </article>
+
+        <article
+          className="about-lab-card"
+        >
+          <div className="about-lab-nav" role="tablist" aria-label="Work focus modes">
+            {(Object.keys(creativeModes) as CreativeMode[]).map((key) => (
+              <button
+                key={key}
+                type="button"
+                className={activeMode === key ? 'active' : ''}
+                onClick={() => setActiveMode(key)}
+              >
+                {creativeModes[key].label}
+              </button>
+            ))}
+          </div>
+
+          <motion.div
+            key={activeMode}
+            className="about-lab-content"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.28, ease: 'easeOut' }}
+          >
+            <h3>{mode.title}</h3>
+            <p>{mode.summary}</p>
+            <ul>
+              {mode.points.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </motion.div>
+        </article>
       </section>
     </PageLayout>
   );
 };
 
-export default About; 
+export default About;

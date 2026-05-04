@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Operating System Virtual Lab cover">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <rect x="130" y="120" width="940" height="435" rx="20" fill="#0b1220" stroke="#334155" stroke-width="3"/>
+  <rect x="180" y="170" width="320" height="150" rx="14" fill="#111827"/>
+  <rect x="540" y="170" width="320" height="150" rx="14" fill="#111827"/>
+  <rect x="900" y="170" width="120" height="150" rx="14" fill="#111827"/>
+  <text x="208" y="218" font-family="Manrope, sans-serif" font-size="20" fill="#93c5fd">Deadlock</text>
+  <text x="568" y="218" font-family="Manrope, sans-serif" font-size="20" fill="#34d399">CPU Scheduling</text>
+  <text x="914" y="218" font-family="Manrope, sans-serif" font-size="18" fill="#f59e0b">Disk</text>
+  <rect x="180" y="350" width="840" height="160" rx="14" fill="#111827"/>
+  <path d="M220 430H940" stroke="#475569" stroke-width="3"/>
+  <rect x="236" y="410" width="128" height="36" rx="8" fill="#60a5fa"/>
+  <rect x="388" y="410" width="92" height="36" rx="8" fill="#34d399"/>
+  <rect x="504" y="410" width="168" height="36" rx="8" fill="#f59e0b"/>
+  <rect x="696" y="410" width="112" height="36" rx="8" fill="#f472b6"/>
+  <text x="130" y="86" font-family="Manrope, sans-serif" font-size="52" font-weight="700" fill="#f1f5f9">Operating System Virtual Lab</text>
+</svg>

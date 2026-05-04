@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="AI-Powered Spatial Navigator project cover">
+  <rect width="1200" height="675" fill="#0b1220"/>
+  <rect x="440" y="85" width="320" height="505" rx="40" fill="#111827" stroke="#334155" stroke-width="4"/>
+  <rect x="470" y="130" width="260" height="410" rx="24" fill="#020617"/>
+  <g fill="none" stroke="#60a5fa" stroke-width="5" opacity="0.9">
+    <circle cx="600" cy="235" r="78"/>
+    <circle cx="600" cy="235" r="46"/>
+    <path d="M600 157v156M522 235h156"/>
+  </g>
+  <path d="M520 430c45-86 122-86 167 0" fill="none" stroke="#34d399" stroke-width="9" stroke-linecap="round"/>
+  <circle cx="600" cy="410" r="12" fill="#34d399"/>
+  <circle cx="286" cy="210" r="12" fill="#f59e0b"/>
+  <circle cx="918" cy="260" r="12" fill="#f59e0b"/>
+  <circle cx="890" cy="445" r="12" fill="#f59e0b"/>
+  <path d="M286 210l174 60M918 260l-165 36M890 445l-156-42" stroke="#f59e0b" stroke-width="4" stroke-dasharray="10 10"/>
+  <text x="120" y="88" font-family="Manrope, sans-serif" font-size="52" fill="#f3f4f6" font-weight="700">AI-Powered Spatial Navigator</text>
+</svg>

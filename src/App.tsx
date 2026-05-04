@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
+import ScrollProgress from './components/ScrollProgress';
 import HomeGrid from './components/HomeGrid';
 import About from './components/About';
 import Education from './components/Education';
@@ -12,8 +14,9 @@ import './App.css';
 
 function AnimatedRoutes() {
   const location = useLocation();
+
   return (
-    <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="sync" initial={false}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<HomeGrid />} />
         <Route path="/about" element={<About />} />
@@ -28,10 +31,11 @@ function AnimatedRoutes() {
 }
 
 function AppContent() {
-  const location = useLocation();
   return (
     <>
-      {location.pathname !== '/' && <Navbar />}
+      <ScrollProgress />
+      <ScrollToTop />
+      <Navbar />
       <AnimatedRoutes />
     </>
   );

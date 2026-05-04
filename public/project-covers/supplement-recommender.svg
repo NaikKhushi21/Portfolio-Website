@@ -1,0 +1,21 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Supplement Recommender cover">
+  <defs>
+    <linearGradient id="bg4" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#23243d"/>
+      <stop offset="100%" stop-color="#47345e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="url(#bg4)"/>
+  <rect x="110" y="100" width="980" height="520" rx="28" fill="#ffffff12" stroke="#ffffff2d"/>
+  <rect x="190" y="180" width="350" height="340" rx="18" fill="#f8f0ff"/>
+  <rect x="580" y="180" width="420" height="150" rx="18" fill="#e9f8ff"/>
+  <rect x="580" y="370" width="420" height="150" rx="18" fill="#f9e7ee"/>
+  <rect x="255" y="250" width="60" height="180" rx="20" fill="#8f4fbe"/>
+  <rect x="340" y="220" width="80" height="210" rx="24" fill="#6cc5c2"/>
+  <rect x="440" y="270" width="50" height="160" rx="18" fill="#d889b0"/>
+  <circle cx="630" cy="255" r="10" fill="#5cb0d7"/>
+  <rect x="655" y="245" width="290" height="20" rx="10" fill="#a5d7ee"/>
+  <circle cx="630" cy="425" r="10" fill="#cb6b9f"/>
+  <rect x="655" y="415" width="240" height="20" rx="10" fill="#e4afc6"/>
+  <text x="110" y="665" fill="#f8f0ff" font-family="Manrope, sans-serif" font-size="44" font-weight="800">Supplement Recommender</text>
+</svg>

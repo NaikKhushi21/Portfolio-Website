@@ -1,53 +1,108 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Publications.css';
-import PageLayout, { cardVariants } from './PageLayout';
+import PageLayout from './PageLayout';
+import { cinematicEase } from './motionPresets';
 
 const publications = [
   {
-    title: 'IoT Technologies in Smart Environment: Security Issues and Future Enhancements',
-    venue: 'Environmental Science and Pollution Research 2022',
-    link: 'https://link.springer.com/10.1007/s11356-022-20132-1',
-    description: 'This comprehensive review paper explores the role of IoT in smart environment development, covering various sectors including agriculture, transportation, garbage collection, and security. The paper discusses key technologies like RFID, IP, EPC, Wi-Fi, Bluetooth, and ZigBee, providing insights into IoT implementation challenges and future enhancements for researchers in the field.',
+    title: 'Car Driver Fatigue Detection Using Deep Learning and IoT Modules',
+    venue: 'Patent (WIPO)',
+    year: '2026',
+    link: 'https://patentscope.wipo.int/search/en/detail.jsf?docId=IN417757234',
+    description:
+      'Co-inventor, Patent No. 587088 (granted Apr 17, 2026) on a deep learning and IoT-based driver fatigue detection system for safer road monitoring.'
   },
   {
     title: 'Automated Drowsiness Detection for Driver Safety: A Deep Learning-based Approach',
-    venue: 'IEEE 2023',
+    venue: 'IEEE',
+    year: '2023',
     link: 'https://ieeexplore.ieee.org/document/10183506',
-    description: 'This paper presents a comprehensive deep learning framework for real-time driver drowsiness detection using computer vision and deep learning techniques. The system analyzes facial landmarks and eye movements to detect fatigue indicators, achieving high accuracy in identifying drowsy states to enhance road safety.',
+    description:
+      'Designed a real-time fatigue detection framework that uses facial landmarks and eye-state dynamics to identify drowsiness risk in driving scenarios.'
   },
   {
     title: 'Effective Automated Drowsiness Detection Using Machine Intelligence Techniques',
-    venue: 'IEEE 2023',
+    venue: 'IEEE',
+    year: '2023',
     link: 'https://ieeexplore.ieee.org/document/10263966',
-    description: 'This research focuses on implementing advanced machine learning and ensemble techniques for automated drowsiness detection systems. The paper explores various ML approaches and ensemble methods to improve the accuracy and reliability of fatigue detection in real-world driving scenarios.',
+    description:
+      'Benchmarked multiple machine-intelligence approaches for robust drowsiness classification under variable real-world conditions and lighting.'
   },
-  // Add more publications as needed
+  {
+    title: 'IoT Technologies in Smart Environment: Security Issues and Future Enhancements',
+    venue: 'Environmental Science and Pollution Research',
+    year: '2022',
+    link: 'https://link.springer.com/10.1007/s11356-022-20132-1',
+    description:
+      'Surveyed IoT adoption across transportation, agriculture, and public systems with an emphasis on security risks, operational constraints, and resilience priorities.'
+  }
+];
+
+const researchThemes = [
+  {
+    title: 'Applied Safety Systems',
+    text: 'Research centered on practical, real-world ML applications where model decisions directly affect human outcomes.'
+  },
+  {
+    title: 'Interpretability and Trust',
+    text: 'A recurring focus on making intelligent systems understandable and dependable for stakeholders beyond engineering teams.'
+  },
+  {
+    title: 'From Paper to Product',
+    text: 'I treat publications as building blocks for future prototypes, not as isolated academic artifacts.'
+  }
 ];
 
 const Publications: React.FC = () => {
   return (
-    <PageLayout title="Publications" subtitle="My published research">
-      <section className="publications-section">
-        <div className="publications-grid">
-          {publications.map((pub, idx) => (
-            <motion.div
-              className="publication-card"
-              key={pub.title}
-              custom={idx}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-              variants={cardVariants}
+    <PageLayout
+      title="Publications"
+      subtitle="Research work"
+      description="Peer-reviewed writing on applied intelligence systems, with emphasis on safety, reliability, and practical implementation contexts."
+      asideTitle="Research lens"
+      asideBody="I write when the finding is useful enough to help another builder move faster or design safer systems."
+      asideTags={['Machine Learning', 'Safety', 'IoT', 'Patent', 'Applied Intelligence']}
+    >
+      <section className="publications-flow">
+        <div className="publications-theme-grid">
+          {researchThemes.map((theme, index) => (
+            <motion.article
+              key={theme.title}
+              className="publications-theme-card"
+              initial={{ opacity: 0, y: 44, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: false, amount: 0.3 }}
+              transition={{ duration: 0.72, delay: index * 0.06, ease: cinematicEase }}
+              whileHover={{ y: -4, transition: { duration: 0.2, ease: cinematicEase } }}
             >
-              <a href={pub.link} target="_blank" rel="noopener noreferrer" className="publication-link">
-                <div className="publication-content">
-                  <h3>{pub.title}</h3>
-                  <p className="publication-venue">{pub.venue}</p>
-                  <p className="publication-description">{pub.description}</p>
-                </div>
-              </a>
-            </motion.div>
+              <h3>{theme.title}</h3>
+              <p>{theme.text}</p>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="publications-timeline" aria-label="Publication list">
+          {publications.map((pub) => (
+            <motion.article
+              className="publication-story-card"
+              key={pub.title}
+              initial={{ opacity: 0, y: 64, filter: 'blur(12px)', scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+              viewport={{ once: false, amount: 0.22 }}
+              transition={{ duration: 0.82, ease: cinematicEase }}
+              whileHover={{ y: -3, transition: { duration: 0.2, ease: cinematicEase } }}
+            >
+              <div className="publication-year-chip">{pub.year}</div>
+              <div className="publication-content">
+                <span className="publication-venue">{pub.venue}</span>
+                <h3>{pub.title}</h3>
+                <p className="publication-description">{pub.description}</p>
+                <a href={pub.link} target="_blank" rel="noopener noreferrer" className="publication-link">
+                  Read publication
+                </a>
+              </div>
+            </motion.article>
           ))}
         </div>
       </section>
@@ -55,4 +110,4 @@ const Publications: React.FC = () => {
   );
 };
 
-export default Publications; 
+export default Publications;

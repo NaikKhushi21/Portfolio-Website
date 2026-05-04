@@ -1,42 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 import './Navbar.css';
 
+const navItems = [
+  { to: '/about', label: 'About' },
+  { to: '/projects', label: 'Projects' },
+  { to: '/experience', label: 'Experience' },
+  { to: '/education', label: 'Education' },
+  { to: '/publications', label: 'Publications' },
+  { to: '/contact', label: 'Contact' }
+];
+
 const Navbar: React.FC = () => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    // Close the menu whenever the route changes
-    setMenuOpen(false);
-  }, [location]);
-
-  const toggleMenu = () => {
-    setMenuOpen(!isMenuOpen);
-  };
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav className="new-navbar">
-      <div className="navbar-container">
-        <NavLink to="/" className="nav-item-kn">KN</NavLink>
+    <header className="minimal-nav-wrap">
+      <nav className="minimal-nav">
+        <Link to="/" className="minimal-brand" onClick={() => setOpen(false)}>
+          <span className="brand-mark">KN</span>
+          <span className="brand-text">© vibe-coded by Khushi</span>
+        </Link>
 
-        <div className={`nav-links ${isMenuOpen ? 'open' : ''}`}>
-          <NavLink to="/about" className="nav-item">About</NavLink>
-          <NavLink to="/education" className="nav-item">Education</NavLink>
-          <NavLink to="/experience" className="nav-item">Work</NavLink>
-          <NavLink to="/projects" className="nav-item">Projects</NavLink>
-          <NavLink to="/publications" className="nav-item">Publications</NavLink>
-          <NavLink to="/contact" className="nav-item">Contact</NavLink>
-        </div>
-
-        <button className="hamburger-menu" onClick={toggleMenu} aria-label="Toggle menu">
-          <div className={`bar ${isMenuOpen ? 'open' : ''}`} />
-          <div className={`bar ${isMenuOpen ? 'open' : ''}`} />
-          <div className={`bar ${isMenuOpen ? 'open' : ''}`} />
+        <button
+          type="button"
+          className="mobile-toggle"
+          onClick={() => setOpen((value) => !value)}
+          aria-label="Toggle navigation"
+          aria-expanded={open}
+        >
+          Menu
         </button>
-      </div>
-    </nav>
+
+        <div className={`minimal-links ${open ? 'open' : ''}`}>
+          {navItems.map((item) => (
+            <NavLink key={item.to} to={item.to} onClick={() => setOpen(false)}>
+              {item.label}
+            </NavLink>
+          ))}
+        </div>
+      </nav>
+    </header>
   );
 };
 
-export default Navbar; 
+export default Navbar;

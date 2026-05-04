@@ -1,75 +1,158 @@
 .about-section {
-  padding: 3rem 0 2rem 0;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  gap: 1rem;
 }
 
 .about-card {
-  background: #fff;
-  border-radius: 0;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
-  padding: 2.5rem;
-  max-width: 900px;
-  width: 100%;
-  text-align: left;
-  border: 2px solid black;
-  transition: box-shadow 0.3s ease-in-out;
-  margin-top: 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  padding: 1.2rem 0;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 1.35rem;
+  align-items: start;
+  will-change: transform, opacity;
 }
 
-.about-card:hover {
-  box-shadow: 0 0 15px 5px rgba(216, 63, 135, 0.4);
+.about-media img {
+  width: 100%;
+  border-radius: 24px;
+  border: 1px solid rgba(17, 24, 39, 0.18);
+  object-fit: cover;
 }
 
 .about-description {
-  font-size: 1.1rem;
-  color: #333;
+  color: #1f2937;
+  font-size: 1.13rem;
+  line-height: 1.82;
+}
+
+.about-description p + p {
+  margin-top: 0.9rem;
+}
+
+.about-lab-card {
+  border: 1px solid rgba(17, 24, 39, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.about-lab-nav {
+  display: grid;
+  gap: 0.45rem;
+  align-content: start;
+}
+
+.about-lab-nav button {
+  text-align: left;
+  border: 1px solid rgba(17, 24, 39, 0.2);
+  border-radius: 999px;
+  padding: 0.5rem 0.85rem;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform var(--ease), border-color var(--ease), color var(--ease), box-shadow var(--ease);
+}
+
+.about-lab-nav button:hover {
+  transform: none;
+}
+
+.about-lab-nav button.active {
+  border-color: #2563eb;
+  color: #2563eb;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.16);
+}
+
+.about-lab-content h3 {
+  font-size: 1.42rem;
+  line-height: 1.25;
+}
+
+.about-lab-content > p {
+  margin-top: 0.44rem;
+  color: #374151;
+  font-size: 1.01rem;
   line-height: 1.7;
-  margin: 0;
 }
 
-.about-description p {
-  margin-bottom: 1rem;
+.about-lab-content ul {
+  margin-top: 0.75rem;
+  margin-left: 1.1rem;
+  display: grid;
+  gap: 0.5rem;
 }
 
-.about-description ul {
-  list-style-type: disc;
-  list-style-position: inside;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
+.about-lab-content li {
+  list-style: disc;
+  color: #1f2937;
+  font-size: 0.97rem;
+  line-height: 1.68;
 }
 
-.about-description li {
-  margin-bottom: 0.5rem;
+.about-story-grid,
+.about-values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
 }
 
-.about-description b {
-  color: #000;
+.about-story-card,
+.about-value-card {
+  border: 1px solid rgba(17, 24, 39, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.76);
+  padding: 1.15rem;
+  min-height: 190px;
+  transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+  will-change: transform, opacity;
 }
 
-.about-funfact {
-  margin-top: 2rem;
-  background: rgba(248, 200, 220, 0.2);
-  color: #1a1a1a;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 0.8rem;
-  padding: 0.8rem 1.2rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.7rem;
+.about-story-card:hover,
+.about-value-card:hover {
+  transform: none;
 }
 
-@media (max-width: 700px) {
+.about-story-card h3,
+.about-value-card h3 {
+  font-size: 1.48rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.about-story-card p,
+.about-value-card p {
+  margin-top: 0.56rem;
+  color: #4b5563;
+  font-size: 1.04rem;
+  line-height: 1.72;
+}
+
+@media (max-width: 1020px) {
   .about-card {
-    padding: 1.5rem;
+    grid-template-columns: 1fr;
   }
-  .about-title {
-    font-size: 2rem;
+
+  .about-lab-card {
+    grid-template-columns: 1fr;
   }
-  .about-description {
-    font-size: 1rem;
+
+  .about-lab-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-} 
+
+  .about-lab-nav button {
+    text-align: center;
+  }
+
+  .about-story-grid,
+  .about-values-grid {
+    grid-template-columns: 1fr;
+  }
+}

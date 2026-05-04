@@ -1,132 +1,109 @@
-.publications-section {
-  padding: 3rem 0 2rem 0;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.publications-badge {
-  display: inline-block;
-  background: #D83F87;
-  color: #fff;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border-radius: 1.2rem;
-  padding: 0.3rem 1.1rem;
-  margin-bottom: 0.5rem;
-  letter-spacing: 1px;
-}
-
-.publications-title {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: #D83F87;
-  margin: 0 0 2.2rem 0;
-  letter-spacing: -1px;
-}
-
-.publications-container-card {
-  background: #fff;
-  border-radius: 0;
-  box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
-  padding: 2.5rem;
-  max-width: 900px;
-  width: 100%;
-  text-align: left;
-  border: 2px solid black;
-  margin: 0 auto;
-}
-
-.publications-grid {
+.publications-flow {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
+  gap: 1rem;
 }
 
-.publications-grid .publication-card {
-  background: #fff;
-  border: 2px solid black !important;
-  border-radius: 0;
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  transition: box-shadow 0.3s ease-in-out;
-  position: relative;
-  min-height: 120px;
-  box-shadow: none;
+.publications-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.8rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.35);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+  padding: 0.8rem 0;
 }
 
-.publications-grid .publication-card:hover {
-  box-shadow: 0 0 15px 5px rgba(216, 63, 135, 0.4);
+.publications-theme-card {
+  border: 1px solid rgba(17, 24, 39, 0.18);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: 0.82rem;
+  will-change: transform, opacity;
 }
 
-.publication-link {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.2rem;
-  text-decoration: none;
-  color: inherit;
-  width: 100%;
+.publications-theme-card h3 {
+  font-size: 1.02rem;
 }
 
-.publication-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 0;
-  object-fit: contain;
-  background: #fbc2eb22;
-  box-shadow: none;
-  flex-shrink: 0;
-  margin-top: 0.2rem;
+.publications-theme-card p {
+  margin-top: 0.36rem;
+  color: #4b5563;
+  font-size: 0.9rem;
+  line-height: 1.58;
 }
 
-.publication-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.publications-timeline {
+  display: grid;
 }
 
-.publication-card h3 {
-  font-size: 1.08rem;
+.publication-story-card {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 0.9rem 0;
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 1rem;
+  content-visibility: auto;
+  contain-intrinsic-size: 260px;
+  will-change: transform, opacity;
+}
+
+.publication-year-chip {
+  display: inline-flex;
+  align-self: start;
+  justify-self: start;
+  border: 1px solid rgba(17, 24, 39, 0.22);
+  border-radius: 999px;
+  padding: 0.24rem 0.5rem;
+  font-size: 0.64rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   font-weight: 700;
-  color: #D83F87;
-  margin: 0;
-  line-height: 1.3;
+  color: #374151;
 }
 
 .publication-venue {
-  font-size: 0.9rem;
-  color: #666;
-  margin: 0;
-  font-weight: 600;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.publication-content h3 {
+  margin-top: 0.34rem;
+  font-size: 1.2rem;
+  line-height: 1.34;
 }
 
 .publication-description {
-  font-size: 0.95rem;
-  color: #1a1a1a;
-  margin: 0;
-  line-height: 1.5;
-  opacity: 0.9;
+  margin-top: 0.4rem;
+  color: #374151;
+  font-size: 0.94rem;
+  line-height: 1.66;
 }
 
-.publication-card p {
-  font-size: 0.98rem;
-  color: #1a1a1a;
-  margin: 0;
+.publication-link {
+  margin-top: 0.56rem;
+  display: inline-flex;
+  border: 1px solid rgba(17, 24, 39, 0.25);
+  border-radius: 999px;
+  padding: 0.28rem 0.56rem;
+  font-size: 0.66rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-weight: 700;
 }
 
-@media (max-width: 900px) {
-  .publications-grid {
+.publication-link:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+@media (max-width: 980px) {
+  .publications-theme-grid {
     grid-template-columns: 1fr;
-    gap: 1.2rem;
   }
-  .publications-section {
-    padding: 2rem 0 1rem 0;
+
+  .publication-story-card {
+    grid-template-columns: 1fr;
   }
-} 
+}

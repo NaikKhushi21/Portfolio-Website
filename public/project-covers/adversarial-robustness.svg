@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-label="Adversarial Robustness project cover">
+  <rect width="1200" height="675" fill="#0f172a"/>
+  <rect x="120" y="130" width="420" height="420" rx="22" fill="#111827" stroke="#374151" stroke-width="3"/>
+  <rect x="660" y="130" width="420" height="420" rx="22" fill="#111827" stroke="#374151" stroke-width="3"/>
+  <g fill="none" stroke="#94a3b8" stroke-width="3">
+    <path d="M190 220h280M190 280h280M190 340h280M190 400h280M190 460h280"/>
+    <path d="M730 220h280M730 280h280M730 340h280M730 400h280M730 460h280"/>
+  </g>
+  <path d="M560 340h82" stroke="#f8fafc" stroke-width="8" stroke-linecap="round"/>
+  <path d="M620 305l35 35-35 35" fill="none" stroke="#f8fafc" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M236 384l78-78 70 58 126-126" stroke="#ef4444" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M778 384l70-70 64 54 98-102" stroke="#22c55e" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="120" y="88" font-family="Manrope, sans-serif" font-size="52" fill="#f3f4f6" font-weight="700">Adversarial Robustness for Vision Models</text>
+</svg>

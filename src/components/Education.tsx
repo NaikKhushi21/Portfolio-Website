@@ -1,204 +1,120 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './Education.css';
-import PageLayout, { cardVariants } from './PageLayout';
-import awsLogo from '../assets/aws.svg';
-import jaxLogo from '../assets/jax.png';
-import openaiLogo from '../assets/OpenAI-black-monoblossom.svg';
-import langchainLogo from '../assets/langchain.png';
+import PageLayout from './PageLayout';
+import { cinematicEase } from './motionPresets';
 
 const educationData = [
   {
     degree: 'Master of Science in Computer Science',
     school: 'University of Southern California',
     coursework:
-      'I spent two years deepening my skills in AI, machine learning, deep learning, natural-language processing, advanced computer vision, algorithms, and even mobile-game development, turning class projects into real prototypes and research ideas.',
-    years: '2023 – 2025',
-    icon: '', // Placeholder, can use a USC logo if available
+      'Deepened expertise in machine learning, advanced computer vision, NLP, and scalable software systems while converting research and classwork into production-grade prototypes.',
+    years: '2023 – 2025'
   },
   {
     degree: 'Bachelor of Technology in Information and Communication Technology',
     school: 'Pandit Deendayal Energy University',
     coursework:
-      'Over four years I built a solid base in data structures, databases, operating systems, and cloud services while exploring AI, machine learning, computer vision, NLP, and big-data analytics through labs, hackathons, and group projects.',
-    years: '2019 – 2023',
-    icon: '', // Placeholder, can use a DA-IICT logo if available
-  },
+      'Built strong foundations in algorithms, systems, databases, and cloud while exploring AI/ML through hackathons, labs, and collaborative engineering projects.',
+    years: '2019 – 2023'
+  }
+];
+
+const academicHighlights = [
+  { label: 'Graduate Degree', value: 'USC MSCS' },
+  { label: 'Core Focus', value: 'AI + Vision + Product' },
+  { label: 'Project Style', value: 'Research to Deployment' }
 ];
 
 const skillsCategories = [
   {
     title: 'Languages',
-    skills: [
-      { name: 'Python', icon: 'devicon-python-plain colored' },
-      { name: 'Java', icon: 'devicon-java-plain colored' },
-      { name: 'JavaScript', icon: 'devicon-javascript-plain colored' },
-      { name: 'TypeScript', icon: 'devicon-typescript-plain colored' },
-      { name: 'C++', icon: 'devicon-cplusplus-plain colored' },
-      { name: 'C', icon: 'devicon-c-plain colored' },
-      { name: 'C#', icon: 'devicon-csharp-plain colored' },
-      { name: 'Go', icon: 'devicon-go-plain colored' },
-      { name: 'Swift', icon: 'devicon-swift-plain colored' },
-      { name: 'R', icon: 'devicon-r-plain colored' },
-      { name: 'Solidity', icon: 'devicon-solidity-plain colored' },
-      { name: 'HTML', icon: 'devicon-html5-plain colored' },
-      { name: 'SQL', icon: 'devicon-mysql-plain colored' },
-    ],
+    skills: ['Python', 'Java', 'JavaScript', 'TypeScript', 'C++', 'C', 'C#', 'Go', 'Swift', 'R', 'Solidity', 'HTML', 'SQL']
   },
   {
-    title: 'Frameworks & Tech',
-    skills: [
-      { name: 'React', icon: 'devicon-react-original colored' },
-      { name: 'Redux', icon: 'devicon-redux-original colored' },
-      { name: 'Node.js', icon: 'devicon-nodejs-plain colored' },
-      { name: 'Express', icon: 'devicon-express-original colored' },
-      { name: 'Next.js', icon: 'devicon-nextjs-original colored' },
-      { name: 'Django', icon: 'devicon-django-plain colored' },
-      { name: 'Flask', icon: 'devicon-flask-original colored' },
-      { name: 'Angular', icon: 'devicon-angularjs-plain colored' },
-      { name: 'Bootstrap', icon: 'devicon-bootstrap-plain colored' },
-      { name: 'Material-UI', icon: 'devicon-materialui-plain colored' },
-      { name: 'Linux', icon: 'devicon-linux-plain colored' },
-    ],
+    title: 'Frameworks',
+    skills: ['React', 'Redux', 'Node.js', 'Express', 'Next.js', 'Django', 'Flask', 'Angular', 'Bootstrap', 'Material-UI', 'Linux']
   },
   {
-    title: 'Databases & Cloud',
-    skills: [
-      { name: 'AWS', icon: 'devicon-amazonwebservices-original colored' },
-      { name: 'GCP', icon: 'devicon-googlecloud-plain colored' },
-      { name: 'Docker', icon: 'devicon-docker-plain colored' },
-      { name: 'Kubernetes', icon: 'devicon-kubernetes-plain colored' },
-      { name: 'MongoDB', icon: 'devicon-mongodb-plain colored' },
-      { name: 'PostgreSQL', icon: 'devicon-postgresql-plain colored' },
-      { name: 'MySQL', icon: 'devicon-mysql-plain colored' },
-      { name: 'Redis', icon: 'devicon-redis-plain colored' },
-      { name: 'Git', icon: 'devicon-git-plain colored' },
-      { name: 'CI/CD', icon: 'devicon-githubactions-plain colored' },
-      { name: 'Hadoop', icon: 'devicon-hadoop-plain colored' },
-    ],
+    title: 'Data & Cloud',
+    skills: ['AWS', 'GCP', 'Docker', 'Kubernetes', 'MongoDB', 'PostgreSQL', 'MySQL', 'Redis', 'Git', 'CI/CD', 'Hadoop']
   },
   {
     title: 'AI & ML',
-    skills: [
-      { name: 'TensorFlow', icon: 'devicon-tensorflow-original colored' },
-      { name: 'PyTorch', icon: 'devicon-pytorch-original colored' },
-      { name: 'Scikit-Learn', icon: 'devicon-scikitlearn-plain colored' },
-      { name: 'Spark', icon: 'devicon-apachespark-plain colored' },
-      { name: 'NumPy', icon: 'devicon-numpy-original colored' },
-      { name: 'Pandas', icon: 'devicon-pandas-original colored' },
-      { name: 'OpenCV', icon: 'devicon-opencv-plain colored' },
-      { name: 'Jax', icon: '' },
-      { name: 'OpenAI', icon: '' },
-      { name: 'LangChain', icon: '' },
-    ],
-  },
+    skills: ['TensorFlow', 'PyTorch', 'Scikit-Learn', 'Spark', 'NumPy', 'Pandas', 'OpenCV', 'Jax', 'OpenAI', 'LangChain']
+  }
 ];
-
-const logoMap: Record<string, string> = {
-  'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-  'Java': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-  'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-  'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
-  'C++': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
-  'C': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
-  'C#': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
-  'Go': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg',
-  'Swift': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
-  'R': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
-  'Solidity': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/solidity/solidity-original.svg',
-  'HTML': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-  'SQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-  'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-  'Redux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
-  'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-  'Express': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
-  'Next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
-  'Django': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
-  'Flask': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg',
-  'Angular': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg',
-  'Bootstrap': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg',
-  'Material-UI': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg',
-  'Linux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
-  'AWS': awsLogo,
-  'GCP': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg',
-  'Docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
-  'Kubernetes': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg',
-  'MongoDB': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-  'PostgreSQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
-  'MySQL': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-  'Redis': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg',
-  'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-  'CI/CD': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/githubactions/githubactions-original.svg',
-  'Hadoop': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hadoop/hadoop-original.svg',
-  'TensorFlow': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg',
-  'PyTorch': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg',
-  'Scikit-Learn': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg',
-  'Spark': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg',
-  'NumPy': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg',
-  'Pandas': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg',
-  'OpenCV': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg',
-  'Jax': jaxLogo,
-  'OpenAI': openaiLogo,
-  'LangChain': langchainLogo,
-};
 
 const Education: React.FC = () => {
   return (
-    <PageLayout title="Education & Skills" subtitle="My academic journey">
-      <section className="education-section">
-        <div className="education-timeline">
-          {educationData.map((edu, idx) => (
-            <motion.div
-              className="education-card"
-              key={edu.degree}
-              custom={idx}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.1 }}
-              variants={cardVariants}
+    <PageLayout
+      title="Education"
+      subtitle="Academic Foundation"
+      description="Structured training in machine learning and software engineering, paired with hands-on project execution and deployment discipline."
+    >
+      <section className="education-modern">
+        <div className="education-highlights">
+          {academicHighlights.map((item, index) => (
+            <motion.article
+              key={item.label}
+              className="education-highlight"
+              initial={{ opacity: 0, y: 46, filter: 'blur(10px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: false, amount: 0.35 }}
+              transition={{
+                duration: 0.74,
+                delay: index * 0.06,
+                ease: cinematicEase
+              }}
             >
-              <div className="education-card-header">
-                {edu.icon && <i className={edu.icon} />}
-                <div>
-                  <h3>{edu.degree}</h3>
-                  <span className="education-school">{edu.school}</span>
-                  <span className="education-years">{edu.years}</span>
-                </div>
-              </div>
-              <div className="education-details">
-                <p className="education-coursework">{edu.coursework}</p>
-              </div>
-            </motion.div>
+              <span>{item.label}</span>
+              <h3>{item.value}</h3>
+            </motion.article>
           ))}
         </div>
 
-        <div className="skills-grid-container">
-          {skillsCategories.map((category, catIndex) => (
-            <motion.div
-              className="skill-card"
+        <div className="education-timeline-modern">
+          {educationData.map((edu) => (
+            <motion.article
+              key={edu.degree}
+              className="education-row"
+              initial={{ opacity: 0, y: 72, filter: 'blur(12px)' }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+              viewport={{ once: false, amount: 0.22 }}
+              transition={{ duration: 0.82, ease: cinematicEase }}
+              whileHover={{ y: -4, transition: { duration: 0.2, ease: cinematicEase } }}
+            >
+              <div className="education-row-left">
+                <p>{edu.years}</p>
+              </div>
+              <div className="education-row-right">
+                <h3>{edu.degree}</h3>
+                <h4>{edu.school}</h4>
+                <p>{edu.coursework}</p>
+              </div>
+            </motion.article>
+          ))}
+        </div>
+
+        <div className="education-skill-sections">
+          {skillsCategories.map((category) => (
+            <motion.article
               key={category.title}
-              custom={catIndex}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
-              variants={cardVariants}
+              className="skill-section"
+              initial={{ opacity: 0, y: 58, filter: 'blur(10px)', scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
+              viewport={{ once: false, amount: 0.28 }}
+              transition={{ duration: 0.74, ease: cinematicEase }}
+              whileHover={{ y: -4, transition: { duration: 0.2, ease: cinematicEase } }}
             >
               <h3>{category.title}</h3>
-              <div className="skills-list">
-                {category.skills.map(skill => (
-                  <div className="skill-item" key={skill.name}>
-                    {logoMap[skill.name] && (
-                      <img
-                        src={logoMap[skill.name]}
-                        alt={skill.name + ' logo'}
-                        className="skill-logo"
-                      />
-                    )}
-                    <span>{skill.name}</span>
-                  </div>
+              <div className="skill-pills">
+                {category.skills.map((skill) => (
+                  <span key={skill}>{skill}</span>
                 ))}
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </div>
       </section>
@@ -206,4 +122,4 @@ const Education: React.FC = () => {
   );
 };
 
-export default Education; 
+export default Education;
