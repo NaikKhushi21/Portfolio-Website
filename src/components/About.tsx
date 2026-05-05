@@ -4,7 +4,7 @@ import './About.css';
 import PageLayout from './PageLayout';
 import { cinematicEase } from './motionPresets';
 
-const aboutPhoto = `${import.meta.env.BASE_URL}Me_about_transparent.png`;
+const aboutPhoto = `${import.meta.env.BASE_URL}me_about.png`;
 
 const creativeModes = {
   aiSystems: {
