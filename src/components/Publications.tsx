@@ -41,15 +41,15 @@ const publications = [
 
 const researchThemes = [
   {
-    title: 'Applied Safety Systems',
+    title: 'APPLIED SAFETY SYSTEMS',
     text: 'Research centered on practical, real-world ML applications where model decisions directly affect human outcomes.'
   },
   {
-    title: 'Interpretability and Trust',
+    title: 'INTERPRETABILITY AND TRUST',
     text: 'A recurring focus on making intelligent systems understandable and dependable for stakeholders beyond engineering teams.'
   },
   {
-    title: 'From Paper to Product',
+    title: 'FROM PAPER TO PRODUCT',
     text: 'I treat publications as building blocks for future prototypes, not as isolated academic artifacts.'
   }
 ];
@@ -57,22 +57,19 @@ const researchThemes = [
 const Publications: React.FC = () => {
   return (
     <PageLayout
-      title="Publications"
+      title="PUBLICATIONS"
       subtitle="Research work"
       description="Peer-reviewed writing on applied intelligence systems, with emphasis on safety, reliability, and practical implementation contexts."
-      asideTitle="Research lens"
-      asideBody="I write when the finding is useful enough to help another builder move faster or design safer systems."
-      asideTags={['Machine Learning', 'Safety', 'IoT', 'Patent', 'Applied Intelligence']}
-    >
+      >
       <section className="publications-flow">
         <div className="publications-theme-grid">
           {researchThemes.map((theme, index) => (
             <motion.article
               key={theme.title}
               className="publications-theme-card"
-              initial={{ opacity: 0, y: 44, filter: 'blur(10px)' }}
-              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              viewport={{ once: false, amount: 0.3 }}
+              initial={{ opacity: 0, y: 44 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.72, delay: index * 0.06, ease: cinematicEase }}
               whileHover={{ y: -4, transition: { duration: 0.2, ease: cinematicEase } }}
             >
@@ -87,9 +84,9 @@ const Publications: React.FC = () => {
             <motion.article
               className="publication-story-card"
               key={pub.title}
-              initial={{ opacity: 0, y: 64, filter: 'blur(12px)', scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-              viewport={{ once: false, amount: 0.22 }}
+              initial={{ opacity: 0, y: 64, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.22 }}
               transition={{ duration: 0.82, ease: cinematicEase }}
               whileHover={{ y: -3, transition: { duration: 0.2, ease: cinematicEase } }}
             >

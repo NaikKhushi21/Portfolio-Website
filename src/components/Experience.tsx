@@ -90,7 +90,7 @@ const impactStrip = [
 const Experience: React.FC = () => {
   return (
     <PageLayout
-      title="Work Experience"
+      title="WORK EXPERIENCE"
       subtitle="Professional Journey"
       description="From research-inspired prototypes to production systems, focused on measurable impact, strong engineering quality, and collaborative execution."
     >
@@ -100,9 +100,9 @@ const Experience: React.FC = () => {
             <motion.article
               key={item.label}
               className="experience-impact-item"
-              initial={{ opacity: 0, y: 42, filter: 'blur(9px)' }}
-              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              viewport={{ once: false, amount: 0.35 }}
+              initial={{ opacity: 0, y: 42 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.35 }}
               transition={{ duration: 0.72, delay: index * 0.06, ease: cinematicEase }}
             >
               <span>{item.label}</span>
@@ -116,9 +116,9 @@ const Experience: React.FC = () => {
             <motion.article
               className="experience-row"
               key={`${exp.company}-${exp.title}`}
-              initial={{ opacity: 0, y: 74, filter: 'blur(12px)', scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-              viewport={{ once: false, amount: 0.2 }}
+              initial={{ opacity: 0, y: 74, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.84, ease: cinematicEase }}
               whileHover={{ y: -4, transition: { duration: 0.2, ease: cinematicEase } }}
             >

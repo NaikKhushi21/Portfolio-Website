@@ -7,9 +7,11 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.8rem;
-  border-top: 1px solid rgba(0, 0, 0, 0.38);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.38);
-  padding: 0.8rem 0;
+  border: 3px solid #101010;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.82);
+  padding: 0.8rem;
 }
 
 .experience-impact-item span {
@@ -21,13 +23,25 @@
 }
 
 .experience-impact-item h3 {
+  font-family: var(--font-display);
   margin-top: 0.35rem;
   font-size: 1rem;
   line-height: 1.45;
 }
 
 .experience-impact-item {
-  will-change: transform, opacity;
+  border: 2px solid #111827;
+  border-radius: 14px;
+  padding: 0.72rem;
+  background: #f4df4f;
+}
+
+.experience-impact-item:nth-child(3n + 2) { background: #ef4444; }
+.experience-impact-item:nth-child(3n + 3) { background: #36c2d8; }
+
+.experience-impact-item:nth-child(3n + 2) span,
+.experience-impact-item:nth-child(3n + 2) h3 {
+  color: #fff;
 }
 
 .experience-timeline-modern {
@@ -35,14 +49,17 @@
 }
 
 .experience-row {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border: 2px solid #101010;
+  border-radius: 16px;
+  margin-top: 0.7rem;
+  background: #fff;
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   gap: 1.2rem;
-  padding: 1rem 0;
+  padding: 1rem;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
   content-visibility: auto;
   contain-intrinsic-size: 360px;
-  will-change: transform, opacity;
 }
 
 .experience-row-left p {
@@ -60,6 +77,7 @@
 }
 
 .experience-row-right h3 {
+  font-family: var(--font-display);
   font-size: 1.4rem;
   line-height: 1.22;
   letter-spacing: -0.01em;
@@ -94,12 +112,24 @@
 }
 
 .experience-tech-list span {
-  border: 1px solid rgba(17, 24, 39, 0.2);
+  border: 2px solid rgba(17, 24, 39, 0.75);
   border-radius: 999px;
   padding: 0.2rem 0.45rem;
   font-size: 0.7rem;
   font-weight: 600;
   color: #374151;
+}
+
+.experience-row:nth-child(3n + 1) {
+  border-left: 10px solid #ef4444;
+}
+
+.experience-row:nth-child(3n + 2) {
+  border-left: 10px solid #f4df4f;
+}
+
+.experience-row:nth-child(3n + 3) {
+  border-left: 10px solid #36c2d8;
 }
 
 @media (max-width: 980px) {

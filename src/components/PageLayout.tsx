@@ -31,22 +31,20 @@ const headerVariants: Variants = {
 };
 
 const headerItem: Variants = {
-  hidden: { opacity: 0, y: 18, filter: 'blur(6px)' },
+  hidden: { opacity: 0, y: 18 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
+        transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] }
   }
 };
 
 export const cardVariants: Variants = {
-  hidden: { opacity: 0, y: 28, filter: 'blur(5px)', scale: 0.985 },
+  hidden: { opacity: 0, y: 28, scale: 0.985 },
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    scale: 1,
+        scale: 1,
     transition: {
       delay: Math.min(i * 0.03, 0.18),
       duration: 0.38,

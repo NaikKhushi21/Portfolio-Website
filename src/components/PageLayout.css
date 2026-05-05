@@ -17,30 +17,37 @@
 
 .page-subtitle {
   display: inline-flex;
+  align-items: center;
+  font-family: var(--font-display);
   font-size: 0.86rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: #4b5563;
+  color: var(--accent);
   font-weight: 700;
 }
 
 .page-title {
   margin-top: 0.3rem;
+  font-family: 'Anton', var(--font-display), sans-serif;
   font-size: clamp(2.8rem, 7.8vw, 6rem);
-  font-weight: 750;
+  font-weight: 400;
   letter-spacing: 0;
   line-height: 0.9;
   overflow-wrap: anywhere;
   word-break: break-word;
   max-width: 100%;
+  color: #fff;
+  -webkit-text-stroke: 2.5px #101010;
+  text-shadow: 4px 4px 0 #ef4444;
 }
 
 .page-description {
   margin-top: 1rem;
   max-width: 78ch;
-  color: var(--text-soft);
+  color: #000000;
   font-size: 1.2rem;
   line-height: 1.6;
+  font-weight: 600;
 }
 
 .page-header-aside {
@@ -68,13 +75,14 @@
 }
 
 .page-header-tags span {
-  border: 1px solid rgba(17, 24, 39, 0.3);
+  border: 2px solid #101010;
   border-radius: 999px;
   padding: 0.24rem 0.5rem;
   font-size: 0.72rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   font-weight: 700;
+  background: #f4df4f;
 }
 
 .page-content {
@@ -83,9 +91,9 @@
 
 .page-rule {
   margin-top: 1.2rem;
-  height: 1px;
+  height: 2px;
   width: 100%;
-  background: linear-gradient(90deg, rgba(17, 24, 39, 0.55), rgba(17, 24, 39, 0.2));
+  background: #111827;
   transform-origin: left center;
 }
 

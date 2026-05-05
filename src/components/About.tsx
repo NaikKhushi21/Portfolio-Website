@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
 import PageLayout from './PageLayout';
+import { cinematicEase } from './motionPresets';
+
+const aboutPhoto = `${import.meta.env.BASE_URL}Me_about_transparent.png`;
 
 const creativeModes = {
   aiSystems: {
@@ -54,16 +57,20 @@ const About: React.FC = () => {
 
   return (
     <PageLayout
-      title="About Me"
+      title="ABOUT ME"
       subtitle="Short story, no fluff"
       description="I’m an MSCS graduate from USC who builds AI, computer vision, and full-stack products with equal focus on technical quality and user experience."
     >
       <section id="about" className="about-section">
-        <article
+        <motion.article
           className="about-card"
+          initial={{ opacity: 0, y: 44, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: 0.72, ease: cinematicEase }}
         >
           <div className="about-media">
-            <img src="me (2).png" alt="Khushi Naik" />
+            <img src={aboutPhoto} alt="Khushi Naik" />
           </div>
           <div className="about-description">
             <p>
@@ -77,10 +84,14 @@ const About: React.FC = () => {
               architecture and APIs to interface polish and usability.
             </p>
           </div>
-        </article>
+        </motion.article>
 
-        <article
+        <motion.article
           className="about-lab-card"
+          initial={{ opacity: 0, y: 56, scale: 0.98 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.78, delay: 0.06, ease: cinematicEase }}
         >
           <div className="about-lab-nav" role="tablist" aria-label="Work focus modes">
             {(Object.keys(creativeModes) as CreativeMode[]).map((key) => (
@@ -110,7 +121,7 @@ const About: React.FC = () => {
               ))}
             </ul>
           </motion.div>
-        </article>
+        </motion.article>
       </section>
     </PageLayout>
   );

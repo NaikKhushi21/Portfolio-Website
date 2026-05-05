@@ -2,11 +2,6 @@
   position: relative;
 }
 
-.app-shell {
-  width: min(1320px, 96vw);
-  margin: 0 auto;
-}
-
 .scroll-progress-track {
   position: fixed;
   top: 0;
@@ -20,32 +15,6 @@
 .scroll-progress-bar {
   height: 100%;
   transform-origin: left;
-  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  background: var(--accent);
   transition: transform 0.08s linear;
-}
-
-.cursor-blob {
-  position: fixed;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #2f7de1;
-  box-shadow: 0 8px 20px rgba(47, 125, 225, 0.34);
-  pointer-events: none;
-  z-index: 1700;
-  transition: width 180ms ease, height 180ms ease, opacity 180ms ease;
-  opacity: 0.92;
-  mix-blend-mode: multiply;
-}
-
-.cursor-blob.active {
-  width: 52px;
-  height: 52px;
-  opacity: 0.8;
-}
-
-@media (hover: none), (pointer: coarse) {
-  .cursor-blob {
-    display: none;
-  }
 }

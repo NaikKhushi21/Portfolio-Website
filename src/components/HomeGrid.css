@@ -3,66 +3,157 @@
   margin: 0 auto;
   padding: 1.2rem 0 4rem;
   display: grid;
-  gap: 1.2rem;
+  gap: 0.55rem;
 }
 
 .home-hero-block {
   position: relative;
-  min-height: 82vh;
+  min-height: auto;
   overflow: hidden;
+  padding: 0.8rem 0.6rem 0.2rem;
 }
 
 .hero-main {
   position: relative;
   z-index: 2;
+  width: min(1220px, 96vw);
+  margin: 0 auto;
+  min-height: auto;
+  padding-bottom: 0;
 }
 
-.hero-kicker {
-  font-size: 0.86rem;
+.hero-top-tag {
+  margin: 0.6rem auto 0;
+  width: fit-content;
+  border: 3px solid #101010;
+  background: #f4df4f;
+  padding: 0.44rem 1.2rem;
+  font-size: clamp(0.86rem, 1.35vw, 1.1rem);
+  font-weight: 900;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #4b5563;
-  font-weight: 700;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.86);
+}
+
+.hero-comic-title-wrap {
+  position: relative;
+  margin-top: 1rem;
+  width: min(1160px, 100%);
+  min-height: clamp(430px, 45vw, 560px);
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-comic-title {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  font-family: 'Anton', var(--font-display), sans-serif;
+  font-size: clamp(6rem, 15.4vw, 12.8rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #e8e8e8;
+  -webkit-text-stroke: 3.3px #101010;
+  text-shadow: 8px 8px 0 rgba(0, 0, 0, 1);
+  letter-spacing: -0.01em;
+  line-height: 0.9;
+  white-space: nowrap;
+  transform: scaleX(0.9);
+  transform-origin: center center;
+  z-index: 1;
+}
+
+.hero-comic-title:first-child {
+  top: 0;
+}
+
+.hero-comic-title:nth-child(2) {
+  top: 33%;
+}
+
+.hero-photo-anchor {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+.hero-photo {
+  width: clamp(250px, 23vw, 330px);
+  max-height: 82%;
+  object-fit: contain;
+  filter: drop-shadow(7px 7px 0 rgba(0, 0, 0, 0.84));
+}
+
+.hero-bottom-banner-anchor {
+  position: absolute;
+  left: 50%;
+  top: 66%;
+  transform: translateX(-50%);
+  z-index: 6;
+  width: min(86%, 620px);
+}
+
+.hero-bottom-banner {
+  margin: 0;
+  width: 100%;
+  border: 3px solid #101010;
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 1.2rem;
+  font-family: 'Anton', var(--font-display), sans-serif;
+  font-size: clamp(1.15rem, 2vw, 2.1rem);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.045em;
+  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.9);
+}
+
+.hero-actions-anchor {
+  position: absolute;
+  left: 50%;
+  top: 84%;
+  transform: translateX(-50%);
+  width: 100%;
 }
 
 .hero-actions {
-  margin-top: 1rem;
+  margin-top: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0.64rem;
+  justify-content: center;
 }
 
 .hero-actions button {
-  border: 1px solid rgba(17, 24, 39, 0.28);
-  background: #fff;
+  border: 2px solid #111827;
+  background: #f4df4f;
   border-radius: 999px;
   padding: 0.62rem 1rem;
   font-weight: 700;
   font-size: 0.86rem;
-  transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.82);
+  transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease), color var(--ease);
 }
 
 .hero-actions button:hover {
   transform: translateY(-2px);
-  border-color: #2563eb;
-  box-shadow: 0 10px 26px rgba(37, 99, 235, 0.22);
-}
-
-.hero-orb {
-  position: absolute;
-  right: -120px;
-  top: 5%;
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #60a5fa, #2563eb);
-  opacity: 0.92;
-  z-index: 1;
+  color: #111827;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.9);
 }
 
 .home-strip {
-  border-top: 1px solid rgba(0, 0, 0, 0.4);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  margin-top: -1.8rem;
+  border: 3px solid #101010;
+  border-radius: 18px;
+  background: #36c2d8;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.82);
   overflow: hidden;
 }
 
@@ -83,34 +174,39 @@
 .track span::after {
   content: '•';
   margin-left: 1rem;
-  color: #2563eb;
+  color: var(--accent);
 }
 
 .home-link-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  gap: 0.7rem;
 }
 
 .home-link-grid button {
-  min-height: 150px;
-  border: 0;
-  border-right: 1px solid rgba(0, 0, 0, 0.35);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
-  background: transparent;
-  text-align: left;
+  min-height: 112px;
+  border: 3px solid #101010;
+  border-radius: 18px;
+  background: #fff;
+  text-align: center;
   padding: 1.1rem;
-  font-size: clamp(1.7rem, 3vw, 2.9rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.3rem, 2.2vw, 2rem);
   font-weight: 650;
-  letter-spacing: -0.03em;
-  transition: background var(--ease), padding-left var(--ease), color var(--ease);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.82);
+  transition: color var(--ease), transform var(--ease), box-shadow var(--ease);
+  cursor: pointer;
 }
 
 .home-link-grid button:hover {
-  background: rgba(255, 255, 255, 0.56);
-  padding-left: 1.5rem;
-  color: #2563eb;
+  background: #fff;
+  color: #111827;
+  transform: translateY(-1px);
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.92);
 }
 
 @keyframes marquee {
@@ -124,18 +220,105 @@
 }
 
 @media (max-width: 980px) {
+  .hero-main {
+    min-height: auto;
+    padding-bottom: 0;
+  }
+
+  .hero-top-tag {
+    margin-top: 0.35rem;
+    padding: 0.34rem 0.72rem;
+    font-size: 0.94rem;
+    box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.86);
+  }
+
+  .hero-comic-title {
+    position: relative;
+    left: auto;
+    width: auto;
+    font-size: clamp(2.8rem, 15.4vw, 5rem);
+    -webkit-text-stroke: 2.2px #101010;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.96);
+    line-height: 0.88;
+    transform: none;
+    white-space: nowrap;
+  }
+
+  .hero-comic-title:first-child {
+    top: auto;
+  }
+
+  .hero-comic-title:nth-child(2) {
+    top: auto;
+    margin-top: -0.2rem;
+  }
+
+  .hero-comic-title-wrap {
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+  }
+
+  .hero-photo-anchor {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: -0.6rem;
+  }
+
+  .hero-photo {
+    width: min(64vw, 260px);
+    max-height: none;
+  }
+
+  .hero-bottom-banner-anchor {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    margin: -0.35rem auto 0;
+    width: min(96%, 460px);
+  }
+
+  .hero-bottom-banner {
+    font-size: clamp(0.88rem, 4.2vw, 1.08rem);
+    padding: 0.72rem 0.7rem;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.9);
+  }
+
+  .hero-actions-anchor {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+    width: 100%;
+  }
+
+  .hero-actions {
+    margin-top: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .hero-actions button {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.84rem;
+  }
+
   .home-link-grid {
     grid-template-columns: 1fr;
   }
 
   .home-link-grid button {
-    border-right: 0;
-    min-height: 112px;
+    min-height: 88px;
+    font-size: clamp(1.05rem, 6.2vw, 1.45rem);
   }
 
-  .hero-orb {
-    width: 220px;
-    height: 220px;
-    right: -80px;
+  .home-strip {
+    margin-top: 0.4rem;
   }
+
 }

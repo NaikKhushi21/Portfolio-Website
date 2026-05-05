@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import './Projects.css';
 import PageLayout from './PageLayout';
@@ -26,7 +26,8 @@ const projects: Project[] = [
     impact: 'HIPAA-oriented workflow with private document handling',
     image: 'project-covers/ai-lab-report.svg',
     stack: ['FastAPI', 'React', 'TypeScript'],
-    github: DEFAULT_GITHUB
+    github: 'https://github.com/NaikKhushi21/MediStream',
+    live: 'https://drive.google.com/file/d/1295Gwdb3jK1F6QVSQeGt0wH9FAV3QvqM/view'
   },
   {
     title: 'Live Meeting Copilot',
@@ -36,7 +37,7 @@ const projects: Project[] = [
     impact: 'Reliable in-session guidance with strict suggestion quality constraints',
     image: 'project-covers/live-meeting-copilot.svg',
     stack: ['React', 'Node.js', 'Express', 'TypeScript'],
-    github: DEFAULT_GITHUB
+    github: 'https://github.com/NaikKhushi21/Real-time-Meeting-Copilot'
   },
   {
     title: 'TensorRT Vision Inference Optimization Pipeline',
@@ -47,7 +48,7 @@ const projects: Project[] = [
     image: 'project-covers/tensorrt-vision.svg',
     stack: ['PyTorch', 'Python'],
     github: DEFAULT_GITHUB
-  },
+    },
   {
     title: 'Supplement Recommender',
     description:
@@ -56,7 +57,8 @@ const projects: Project[] = [
     impact: 'Production-grade personalization and e-commerce orchestration',
     image: 'project-covers/supplement-recommender.svg',
     stack: ['React', 'FastAPI', 'PostgreSQL', 'TypeScript'],
-    github: DEFAULT_GITHUB
+    github: DEFAULT_GITHUB,
+    live: 'https://drive.google.com/file/d/1zjpAMFyWIKfof4LYpHUDxtp20OkO8mNo/view?usp=drive_link'
   },
   {
     title: 'Real Estate Price Prediction Web App',
@@ -76,7 +78,8 @@ const projects: Project[] = [
     impact: 'Instant and grounded document Q&A for domain users',
     github: 'https://github.com/NaikKhushi21/Real-Estate-RAG-Chatbot-with-Ollama-and-Langchain',
     image: 'Chatbot Conversation.jpg',
-    stack: ['React', 'FastAPI', 'LangChain']
+    stack: ['React', 'FastAPI', 'LangChain'],
+    live: 'https://drive.google.com/drive/my-drive?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto'
   },
   {
     title: 'Object Detection Fine-Tuning on Pascal VOC',
@@ -96,7 +99,8 @@ const projects: Project[] = [
     impact: 'Live reminder workflows with reliable user-device synchronization',
     github: 'https://github.com/NaikKhushi21/MedBuddy-Voice-Agent',
     image: 'medbuddy.jpg',
-    stack: ['React', 'FastAPI', 'WebSockets']
+    stack: ['React', 'FastAPI', 'WebSockets'],
+    live: 'https://www.canva.com/design/DAGq25rkCI0/EluzvxQ5DQzYYWRbVKDC2A/watch?utm_content=DAGq25rkCI0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h46abf15725'
   },
   {
     title: 'Skin Cancer Detection with XAI',
@@ -136,7 +140,8 @@ const projects: Project[] = [
     impact: 'Production-ready architecture for end-to-end commerce workflows',
     github: 'https://github.com/NaikKhushi21/MERN-Project',
     image: 'marketlace.jpg',
-    stack: ['MongoDB', 'Express', 'React', 'Node.js']
+    stack: ['MongoDB', 'Express', 'React', 'Node.js'],
+    live: 'https://drive.google.com/file/d/1Fd1EEid0MB9mf09lsmSoheNaIrCYLceT/view'
   },
   {
     title: 'AI Flowchart Generator',
@@ -166,7 +171,8 @@ const projects: Project[] = [
     impact: 'Scalable NLP-powered recommendation flow with API health monitoring.',
     image: 'project-covers/book-recommendation.svg',
     stack: ['FastAPI', 'React', 'Gemini', 'Firestore'],
-    github: DEFAULT_GITHUB
+    github: DEFAULT_GITHUB,
+    live: 'https://drive.google.com/file/d/1T6m00CctC7kUgISJbtV88ZtZZFzc0pLz/view?usp=drive_link'
   },
   {
     title: 'AI-Driven Resume Parser',
@@ -227,7 +233,8 @@ const projects: Project[] = [
     impact: 'Balanced progression and replayability with measurable gameplay signals.',
     image: 'flip.jpg',
     stack: ['Unity', 'C#', 'Git'],
-    github: DEFAULT_GITHUB
+    github: 'https://github.com/NaikKhushi21/Dye-Hard',
+    live: 'https://dw1209.github.io/DyeHard/'
   },
   {
     title: 'Ethereum Phishing Detection',
@@ -247,7 +254,8 @@ const projects: Project[] = [
     impact: 'Enabled data-driven level tuning through per-level player analytics.',
     image: 'flip-the-hue.png',
     stack: ['Unity', 'C#', 'Firebase', 'Git'],
-    github: DEFAULT_GITHUB
+    github: 'https://github.com/NaikKhushi21/Flip-the-Hue',
+    live: 'https://csci-526.github.io/csci526-fall24-friday-main-hue-crew/Gold_Build/'
   },
   {
     title: 'Heart Attack Likelihood Prediction',
@@ -308,7 +316,8 @@ const projects: Project[] = [
     impact: 'Enabled near real-time sentiment tracking for property-market signals.',
     image: 'project-covers/real-estate-sentiment.svg',
     stack: ['Python', 'BeautifulSoup', 'FastAPI', 'React'],
-    github: DEFAULT_GITHUB
+    github: DEFAULT_GITHUB,
+    live: 'https://drive.google.com/drive/my-drive?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto&q=type:video%20parent:0AH0ap9Ff_5V6Uk9PVA'
   },
   {
     title: 'Mini Google Play Store',
@@ -318,7 +327,8 @@ const projects: Project[] = [
     impact: 'Shipped production-style app-store flows for search, reviews, and role-based access.',
     image: 'project-covers/mini-play-store.svg',
     stack: ['Java', 'Spring Boot', 'PostgreSQL', 'React', 'JWT', 'Docker'],
-    github: DEFAULT_GITHUB
+    github: DEFAULT_GITHUB,
+    live: 'https://drive.google.com/file/d/1kBRBGoAp8FApAFl2EKQkkTEojM0Gb804/view?usp=sharing'
   },
   {
     title: '3D Dungeon Crawler Engine',
@@ -358,7 +368,8 @@ const projects: Project[] = [
     impact: 'Automated diligence prep with evidence-backed question generation.',
     image: 'project-covers/pitch-verifier.svg',
     stack: ['Python', 'Gemini API', 'LangChain', 'Tavily API', 'Gmail'],
-    github: DEFAULT_GITHUB
+    github: 'https://github.com/NaikKhushi21/Pitch-Deck-Verifier',
+    live: 'https://drive.google.com/file/d/1C0JB0DFzl6UbirB-f3r19hMm7e32niGv/view'
   },
   {
     title: 'Real-Time Object Detection & Tagging',
@@ -376,18 +387,32 @@ const categories = ['All', ...Array.from(new Set(projects.map((project) => proje
 
 const Projects: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [searchInput, setSearchInput] = useState('');
   const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    const debounceTimer = window.setTimeout(() => {
+      setSearchTerm(searchInput);
+    }, 220);
+
+    return () => window.clearTimeout(debounceTimer);
+  }, [searchInput]);
 
   const filteredProjects = useMemo(() => {
     const query = searchTerm.trim().toLowerCase();
 
     return projects.filter((project) => {
       const categoryMatch = activeCategory === 'All' || project.category === activeCategory;
-      const queryMatch =
-        query.length === 0 ||
-        project.title.toLowerCase().includes(query) ||
-        project.description.toLowerCase().includes(query) ||
-        project.stack.some((tech) => tech.toLowerCase().includes(query));
+      const searchableText = [
+        project.title,
+        project.description,
+        project.category,
+        project.impact,
+        ...project.stack
+      ]
+        .join(' ')
+        .toLowerCase();
+      const queryMatch = query.length === 0 || searchableText.includes(query);
 
       return categoryMatch && queryMatch;
     });
@@ -395,16 +420,16 @@ const Projects: React.FC = () => {
 
   return (
     <PageLayout
-      title="Projects"
+      title="PROJECTS"
       subtitle="Selected Work"
       description="Production AI systems, applied computer vision, healthcare tools, and full-stack products built for real outcomes."
     >
       <section className="projects-modern">
         <motion.div
           className="projects-controls"
-          initial={{ opacity: 0, y: 44, filter: 'blur(10px)' }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          viewport={{ once: false, amount: 0.35 }}
+          initial={{ opacity: 0, y: 44 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
           transition={{ duration: 0.75, ease: cinematicEase }}
         >
           <div className="projects-filters" role="tablist" aria-label="Project categories">
@@ -426,8 +451,8 @@ const Projects: React.FC = () => {
             type="search"
             className="projects-search"
             placeholder="Search by title, stack, keyword"
-            value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}
+            value={searchInput}
+            onChange={(event) => setSearchInput(event.target.value)}
             aria-label="Search projects"
             whileFocus={{ scale: 1.01 }}
           />
@@ -444,14 +469,13 @@ const Projects: React.FC = () => {
                   layout
                   initial={{
                     opacity: 0,
-                    y: 72,
-                    filter: 'blur(12px)',
-                    scale: 0.95
+                    y: 56,
+                    scale: 0.98
                   }}
-                  whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-                  viewport={{ once: false, amount: 0.22 }}
+                  whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                  viewport={{ once: true, amount: 0.22 }}
                   transition={{ duration: 0.85, ease: cinematicEase }}
-                  exit={{ opacity: 0, y: -16, filter: 'blur(6px)', scale: 0.99, transition: { duration: 0.24 } }}
+                  exit={{ opacity: 0, y: -16, scale: 0.99, transition: { duration: 0.24 } }}
                   whileHover={{ y: -6, transition: { duration: 0.22, ease: cinematicEase } }}
                 >
                   <span className="category">{project.category}</span>

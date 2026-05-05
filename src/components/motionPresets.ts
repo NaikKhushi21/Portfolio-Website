@@ -14,12 +14,11 @@ export const sectionStagger: Variants = {
 };
 
 export const sectionItem: Variants = {
-  hidden: { opacity: 0, y: 26, filter: 'blur(7px)' },
+  hidden: { opacity: 0, y: 26 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.48, ease: cinematicEase }
+        transition: { duration: 0.48, ease: cinematicEase }
   }
 };
 
@@ -35,12 +34,11 @@ export const timelineStagger: Variants = {
 };
 
 export const timelineItem: Variants = {
-  hidden: { opacity: 0, y: 28, filter: 'blur(6px)', scale: 0.99 },
+  hidden: { opacity: 0, y: 28, scale: 0.99 },
   visible: {
     opacity: 1,
     y: 0,
-    filter: 'blur(0px)',
-    scale: 1,
+        scale: 1,
     transition: { duration: 0.45, ease: cinematicEase }
   }
 };

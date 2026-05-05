@@ -4,55 +4,65 @@
 }
 
 .projects-controls {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 0.7rem;
-  align-items: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.38);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.38);
-  padding: 0.8rem 0;
+  align-items: start;
+  border: 3px solid #101010;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.82);
+  padding: 0.8rem;
 }
 
 .projects-filters {
-  display: flex;
-  flex-wrap: wrap;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.42rem;
 }
 
 .projects-filters button {
-  border: 1px solid rgba(17, 24, 39, 0.24);
+  font-family: var(--font-display);
+  border: 2px solid #111827;
   border-radius: 999px;
-  background: #fff;
+  background: #36c2d8;
   padding: 0.36rem 0.68rem;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
-  transition: border-color var(--ease), color var(--ease), transform var(--ease);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.82);
+  transition: border-color var(--ease), color var(--ease), transform var(--ease), box-shadow var(--ease);
+  width: 100%;
 }
 
 .projects-filters button:hover {
   transform: translateY(-1px);
-  border-color: #2563eb;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.9);
 }
 
 .projects-filters button.active {
-  border-color: #2563eb;
-  color: #2563eb;
+  border-color: var(--accent);
+  color: #fff;
+  background: #ef4444;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.88);
 }
 
 .projects-search {
-  margin-left: auto;
-  min-width: min(280px, 100%);
-  border: 1px solid rgba(17, 24, 39, 0.28);
+  margin: 0 auto;
+  width: min(620px, 100%);
+  min-width: 0;
+  border: 2px solid #111827;
   border-radius: 999px;
   padding: 0.5rem 0.8rem;
-  background: #fff;
+  background: #f4df4f;
+  text-align: center;
 }
 
 .projects-search:focus-visible {
   outline: none;
-  border-color: #2563eb;
+  border-color: var(--accent);
 }
 
 .projects-grid-modern {
@@ -62,33 +72,41 @@
 }
 
 .project-card-modern {
-  border: 1px solid rgba(17, 24, 39, 0.22);
+  border: 3px solid #101010;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(4px);
+  background: #f4df4f;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.82);
   padding: 0.8rem;
   transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
-  will-change: transform, opacity;
   content-visibility: auto;
   contain-intrinsic-size: 420px;
 }
 
+.project-card-modern:nth-child(3n + 2) {
+  background: #ef4444;
+  color: #fff;
+}
+
+.project-card-modern:nth-child(3n + 3) {
+  background: #36c2d8;
+}
+
 .project-card-modern:hover {
   transform: translateY(-3px);
-  border-color: #2563eb;
-  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.16);
+  box-shadow: 7px 7px 0 rgba(0, 0, 0, 0.86);
 }
 
 .project-card-modern .category {
   display: inline-flex;
-  border: 1px solid rgba(17, 24, 39, 0.2);
+  border: 2px solid #111827;
   border-radius: 999px;
   padding: 0.2rem 0.46rem;
   font-size: 0.62rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 700;
-  color: #374151;
+  color: #fff;
+  background: #ef4444;
 }
 
 .project-image {
@@ -97,7 +115,7 @@
   height: 190px;
   object-fit: cover;
   border-radius: 12px;
-  border: 1px solid rgba(17, 24, 39, 0.14);
+  border: 2px solid #111827;
   transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1), filter 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -105,7 +123,7 @@
   display: grid;
   place-items: end start;
   padding: 0.7rem;
-  background: #f8fafc;
+  background: #36c2d8;
 }
 
 .project-card-modern:hover .project-image {
@@ -114,6 +132,7 @@
 }
 
 .project-card-modern h3 {
+  font-family: var(--font-display);
   margin-top: 0.68rem;
   font-size: 1.18rem;
   line-height: 1.26;
@@ -125,6 +144,48 @@
   color: #374151;
   font-size: 0.9rem;
   line-height: 1.6;
+}
+
+.project-card-modern:nth-child(3n + 2) h3,
+.project-card-modern:nth-child(3n + 2) .description,
+.project-card-modern:nth-child(3n + 2) .impact,
+.project-card-modern:nth-child(3n + 2) .stack span,
+.project-card-modern:nth-child(3n + 2) .links a,
+.project-card-modern:nth-child(3n + 2) .category {
+  color: #fff;
+}
+
+.project-card-modern:nth-child(3n + 2) .stack span,
+.project-card-modern:nth-child(3n + 2) .links a,
+.project-card-modern:nth-child(3n + 2) .category {
+  border-color: #111827;
+  background: #36c2d8;
+  color: #111827;
+}
+
+.project-card-modern:nth-child(3n + 1) .stack span {
+  border-color: #111827;
+  background: #ef4444;
+  color: #fff;
+}
+
+.project-card-modern:nth-child(3n + 1) .links a {
+  border-color: #111827;
+  background: #ef4444;
+  color: #fff;
+}
+
+.project-card-modern:nth-child(3n + 3) .stack span,
+.project-card-modern:nth-child(3n + 3) .category {
+  border-color: #111827;
+  background: #f4df4f;
+  color: #111827;
+}
+
+.project-card-modern:nth-child(3n + 3) .links a {
+  border-color: #111827;
+  background: #f4df4f;
+  color: #111827;
 }
 
 .project-card-modern .impact {
@@ -143,7 +204,7 @@
 }
 
 .stack span {
-  border: 1px solid rgba(17, 24, 39, 0.18);
+  border: 2px solid rgba(17, 24, 39, 0.72);
   border-radius: 999px;
   padding: 0.2rem 0.4rem;
   font-size: 0.68rem;
@@ -158,25 +219,34 @@
 }
 
 .links a {
-  border: 1px solid rgba(17, 24, 39, 0.24);
+  border: 2px solid rgba(17, 24, 39, 0.9);
   border-radius: 999px;
   padding: 0.26rem 0.52rem;
   font-size: 0.68rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-weight: 700;
+  background: #ef4444;
+  color: #fff;
+  transition: box-shadow var(--ease), transform var(--ease), color var(--ease);
 }
 
 .links a:hover {
-  border-color: #2563eb;
-  color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.82);
+  color: inherit;
 }
 
 @media (max-width: 900px) {
+  .projects-filters {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+
   .projects-search {
-    margin-left: 0;
+    margin: 0 auto;
     width: 100%;
     min-width: 0;
+    text-align: left;
   }
 
   .projects-grid-modern {

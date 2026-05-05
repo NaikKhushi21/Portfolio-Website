@@ -4,20 +4,21 @@
 }
 
 .about-card {
-  border-top: 1px solid rgba(0, 0, 0, 0.35);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
-  padding: 1.2rem 0;
+  border: 3px solid #101010;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.82);
+  padding: 1rem;
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
   gap: 1.35rem;
   align-items: start;
-  will-change: transform, opacity;
 }
 
 .about-media img {
   width: 100%;
   border-radius: 24px;
-  border: 1px solid rgba(17, 24, 39, 0.18);
+  border: 2px solid #111827;
   object-fit: cover;
 }
 
@@ -32,9 +33,10 @@
 }
 
 .about-lab-card {
-  border: 1px solid rgba(17, 24, 39, 0.2);
+  border: 3px solid #101010;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.92);
+  background: #fff;
+  box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.82);
   padding: 1rem;
   display: grid;
   grid-template-columns: 260px minmax(0, 1fr);
@@ -49,10 +51,10 @@
 
 .about-lab-nav button {
   text-align: left;
-  border: 1px solid rgba(17, 24, 39, 0.2);
+  border: 2px solid #111827;
   border-radius: 999px;
   padding: 0.5rem 0.85rem;
-  background: #fff;
+  background: #36c2d8;
   font-size: 0.82rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -65,12 +67,14 @@
 }
 
 .about-lab-nav button.active {
-  border-color: #2563eb;
-  color: #2563eb;
-  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.16);
+  border-color: var(--accent);
+  color: #fff;
+  background: #ef4444;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.8);
 }
 
 .about-lab-content h3 {
+  font-family: var(--font-display);
   font-size: 1.42rem;
   line-height: 1.25;
 }
@@ -105,13 +109,24 @@
 
 .about-story-card,
 .about-value-card {
-  border: 1px solid rgba(17, 24, 39, 0.2);
+  border: 2px solid #101010;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.76);
+  background: #f4df4f;
   padding: 1.15rem;
   min-height: 190px;
   transition: transform var(--ease), border-color var(--ease), box-shadow var(--ease);
-  will-change: transform, opacity;
+}
+
+.about-story-card:nth-child(3n + 2),
+.about-value-card:nth-child(3n + 2) { background: #ef4444; color: #fff; }
+.about-story-card:nth-child(3n + 3),
+.about-value-card:nth-child(3n + 3) { background: #36c2d8; }
+
+.about-story-card:nth-child(3n + 2) p,
+.about-value-card:nth-child(3n + 2) p,
+.about-story-card:nth-child(3n + 2) h3,
+.about-value-card:nth-child(3n + 2) h3 {
+  color: #fff;
 }
 
 .about-story-card:hover,
@@ -121,6 +136,7 @@
 
 .about-story-card h3,
 .about-value-card h3 {
+  font-family: var(--font-display);
   font-size: 1.48rem;
   line-height: 1.2;
   letter-spacing: -0.02em;

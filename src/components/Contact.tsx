@@ -38,6 +38,15 @@ const contacts: ContactPoint[] = [
   }
 ];
 
+const ASSET_BASE = import.meta.env.BASE_URL;
+
+const ICON_ASSETS: Record<Exclude<ContactPoint['icon'], 'resume'>, string> = {
+  mail: `${ASSET_BASE}email.png`,
+  linkedin: `${ASSET_BASE}linkedin.png`,
+  github: `${ASSET_BASE}github.png`,
+  scholar: `${ASSET_BASE}google-scholar.png`
+};
+
 const IconGlyph: React.FC<{ type: ContactPoint['icon'] }> = ({ type }) => {
   if (type === 'mail') {
     return (
@@ -92,20 +101,20 @@ const IconGlyph: React.FC<{ type: ContactPoint['icon'] }> = ({ type }) => {
 const Contact: React.FC = () => {
   return (
     <PageLayout
-      title="Contact"
+      title="CONTACT"
       subtitle="Let’s build the good stuff"
       description="Open to full-time opportunities and thoughtful collaborations in machine learning, computer vision, and product engineering."
     >
       <section className="contact-flow">
         <motion.article
           className="contact-hero-card"
-          initial={{ opacity: 0, y: 56, filter: 'blur(10px)' }}
-          whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-          viewport={{ once: false, amount: 0.24 }}
+          initial={{ opacity: 0, y: 56 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.24 }}
           transition={{ duration: 0.8, ease: cinematicEase }}
           whileHover={{ y: -3, transition: { duration: 0.2, ease: cinematicEase } }}
         >
-          <h2>Great products are built by people who care about both precision and people.</h2>
+          <h2>I focus on building products that are simple, useful, and well thought out.</h2>
           <p>
             If you are building in AI, healthcare, or high-impact software and need someone who can think
             from architecture to user experience, I would love to connect.
@@ -117,14 +126,18 @@ const Contact: React.FC = () => {
             <motion.article
               className="contact-card"
               key={item.label}
-              initial={{ opacity: 0, y: 60, filter: 'blur(10px)', scale: 0.97 }}
-              whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)', scale: 1 }}
-              viewport={{ once: false, amount: 0.28 }}
+              initial={{ opacity: 0, y: 60, scale: 0.97 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, amount: 0.28 }}
               transition={{ duration: 0.76, ease: cinematicEase }}
               whileHover={{ y: -4, transition: { duration: 0.2, ease: cinematicEase } }}
             >
               <div className="contact-icon-wrap" aria-hidden="true">
-                <IconGlyph type={item.icon} />
+                {item.icon !== 'resume' ? (
+                  <img src={ICON_ASSETS[item.icon]} alt="" className="contact-icon-image" />
+                ) : (
+                  <IconGlyph type={item.icon} />
+                )}
               </div>
 
               <div className="contact-content">
