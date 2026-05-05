@@ -1,6 +1,7 @@
 .contact-flow {
   display: grid;
   gap: 1rem;
+  min-width: 0;
 }
 
 .contact-hero-card {
@@ -30,6 +31,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.8rem;
+  min-width: 0;
 }
 
 .contact-card {
@@ -41,6 +43,7 @@
   grid-template-columns: 56px minmax(0, 1fr);
   gap: 0.72rem;
   transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
+  min-width: 0;
 }
 
 .contact-card:nth-child(3n + 2) { background: #ef4444; color: #fff; }
@@ -110,6 +113,49 @@
 @media (max-width: 920px) {
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-hero-card {
+    padding: 0.76rem;
+  }
+
+  .contact-hero-card h2 {
+    font-size: clamp(1.2rem, 7vw, 1.7rem);
+    line-height: 1.2;
+  }
+
+  .contact-hero-card p {
+    font-size: 0.9rem;
+    line-height: 1.56;
+  }
+
+  .contact-card {
+    padding: 0.66rem;
+    gap: 0.56rem;
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+
+  .contact-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .contact-icon-image,
+  .contact-icon-wrap svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-label {
+    font-size: 0.58rem;
+  }
+
+  .contact-value {
+    font-size: 0.88rem;
+    line-height: 1.4;
   }
 }
 

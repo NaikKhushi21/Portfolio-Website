@@ -1,6 +1,7 @@
 .publications-flow {
   display: grid;
   gap: 1rem;
+  min-width: 0;
 }
 
 .publications-theme-grid {
@@ -12,6 +13,7 @@
   background: #fff;
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.82);
   padding: 0.8rem;
+  min-width: 0;
 }
 
 .publications-theme-card {
@@ -26,7 +28,7 @@
 
 .publications-theme-card h3 {
   font-family: var(--font-display);
-  font-size: 1.rem;
+  font-size: 1rem;
 }
 
 .publications-theme-card p {
@@ -57,6 +59,7 @@
   box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
   content-visibility: auto;
   contain-intrinsic-size: 260px;
+  min-width: 0;
 }
 
 .publication-year-chip {
@@ -130,5 +133,41 @@
 
   .publication-story-card {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .publications-theme-grid {
+    padding: 0.65rem;
+    gap: 0.6rem;
+  }
+
+  .publications-theme-card {
+    padding: 0.66rem;
+  }
+
+  .publications-theme-card h3 {
+    font-size: 0.9rem;
+    line-height: 1.32;
+  }
+
+  .publications-theme-card p {
+    font-size: 0.84rem;
+    line-height: 1.52;
+  }
+
+  .publication-story-card {
+    margin-top: 0.56rem;
+    padding: 0.7rem;
+    gap: 0.65rem;
+  }
+
+  .publication-content h3 {
+    font-size: 1.02rem;
+  }
+
+  .publication-description {
+    font-size: 0.86rem;
+    line-height: 1.54;
   }
 }

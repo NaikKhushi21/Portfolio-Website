@@ -28,7 +28,7 @@ const creativeModes = {
     ]
   },
   productEngineering: {
-    label: 'Product Engineering',
+    label: 'Production',
     title: 'End-to-End Product Execution',
     summary: 'I like owning the full flow from backend logic to frontend usability and deployment readiness.',
     points: [

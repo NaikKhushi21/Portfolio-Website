@@ -2,6 +2,7 @@
   width: min(1380px, 96vw);
   margin: 0 auto;
   padding-top: 1.2rem;
+  min-width: 0;
 }
 
 .minimal-nav {
@@ -9,6 +10,7 @@
   grid-template-columns: 1fr auto;
   align-items: start;
   gap: 1.2rem;
+  min-width: 0;
 }
 
 .minimal-brand {
@@ -107,21 +109,66 @@
   .minimal-links {
     position: absolute;
     top: 5rem;
-    left: 2vw;
-    right: 2vw;
+    right: 0;
+    left: auto;
+    width: min(320px, calc(100vw - 1rem));
     background: #36c2d8;
     border: 3px solid #101010;
     border-radius: 16px;
-    padding: 0.9rem;
+    padding: 0.7rem;
     box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.8);
     display: none;
-    gap: 0.9rem;
+    gap: 0.55rem;
     flex-direction: column;
     align-items: flex-start;
     z-index: 1300;
+    max-height: min(62vh, 420px);
+    overflow-y: auto;
   }
 
   .minimal-links.open {
     display: flex;
+  }
+
+  .minimal-links a {
+    font-size: 0.96rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .minimal-nav-wrap {
+    width: min(1380px, 98vw);
+    padding-top: 0.65rem;
+  }
+
+  .minimal-brand {
+    min-width: 0;
+    gap: 0.45rem;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    font-size: 0.68rem;
+  }
+
+  .brand-text {
+    font-size: 0.74rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100vw - 170px);
+  }
+
+  .mobile-toggle {
+    padding: 0.34rem 0.72rem;
+    font-size: 0.74rem;
+  }
+
+  .minimal-links {
+    top: 4.3rem;
+    width: min(290px, calc(100vw - 0.85rem));
+    padding: 0.62rem;
   }
 }

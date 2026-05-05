@@ -1,6 +1,7 @@
 .projects-modern {
   display: grid;
   gap: 1rem;
+  min-width: 0;
 }
 
 .projects-controls {
@@ -13,6 +14,7 @@
   background: #fff;
   box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.82);
   padding: 0.8rem;
+  min-width: 0;
 }
 
 .projects-filters {
@@ -20,6 +22,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.42rem;
+  min-width: 0;
 }
 
 .projects-filters button {
@@ -32,6 +35,12 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-weight: 700;
+  line-height: 1.25;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  min-width: 0;
+  text-align: center;
   box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.82);
   transition: border-color var(--ease), color var(--ease), transform var(--ease), box-shadow var(--ease);
   width: 100%;
@@ -69,6 +78,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 0.9rem;
+  min-width: 0;
 }
 
 .project-card-modern {
@@ -80,6 +90,7 @@
   transition: transform var(--ease), box-shadow var(--ease), border-color var(--ease);
   content-visibility: auto;
   contain-intrinsic-size: 420px;
+  min-width: 0;
 }
 
 .project-card-modern:nth-child(3n + 2) {
@@ -239,7 +250,7 @@
 
 @media (max-width: 900px) {
   .projects-filters {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: 1fr;
   }
 
   .projects-search {
@@ -251,5 +262,46 @@
 
   .projects-grid-modern {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-controls {
+    padding: 0.58rem;
+  }
+
+  .projects-filters {
+    display: none;
+  }
+
+  .projects-search {
+    font-size: 0.92rem;
+    padding: 0.46rem 0.72rem;
+    margin: 0;
+  }
+
+  .projects-grid-modern {
+    gap: 0.72rem;
+  }
+
+  .project-card-modern {
+    padding: 0.65rem;
+  }
+
+  .project-image {
+    height: 165px;
+  }
+
+  .project-card-modern h3 {
+    font-size: 1.06rem;
+  }
+
+  .project-card-modern .description {
+    font-size: 0.84rem;
+    line-height: 1.52;
+  }
+
+  .project-card-modern .impact {
+    font-size: 0.78rem;
   }
 }
