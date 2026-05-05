@@ -19,7 +19,6 @@ const Navbar: React.FC = () => {
       <nav className="minimal-nav">
         <Link to="/" className="minimal-brand" onClick={() => setOpen(false)}>
           <span className="brand-mark">KN</span>
-          <span className="brand-text">© vibe-coded by Khushi</span>
         </Link>
 
         <button
